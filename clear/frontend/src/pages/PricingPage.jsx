@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+﻿import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const PricingPage = () => {
@@ -31,7 +31,7 @@ const PricingPage = () => {
         'Bộ vest/suit từ $25/bộ',
         'Giao & nhận hàng miễn phí',
         'Có dịch vụ lấy nhanh trong ngày',
-        "Bảo hành chất lượng từ Jim's",
+        "Bảo hành chất lượng từ TLaundry",
       ],
     },
     {
@@ -76,7 +76,7 @@ const PricingPage = () => {
         'Suits from $25 per set',
         'Free pick-up & delivery',
         'Same-day service available',
-        "Jim's Work Guarantee",
+        "TLaundry Work Guarantee",
       ],
     },
     {
@@ -228,3 +228,4 @@ const PricingPage = () => {
 };
 
 export default PricingPage;
+

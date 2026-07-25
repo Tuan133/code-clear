@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "jims-laundry-backend",
   "version": "1.0.0",
-  "description": "Backend API for Jim's Laundry Services",
+  "description": "Backend API for TLaundry",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -13,3 +13,4 @@
     "express": "^4.19.2"
   }
 }
+

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -30,11 +30,11 @@ const ContactPage = () => {
     },
     {
       q: 'Jim\'s phục vụ những khu vực nào?',
-      a: 'Chúng tôi phục vụ tất cả các bang và vùng lãnh thổ trên toàn nước Úc bao gồm VIC, NSW, QLD, SA, WA, TAS và ACT.',
+      a: 'Chúng tôi phục vụ tất cả các bang và vùng lãnh thổ trên Toàn Sài Gòn bao gồm VIC, NSW, QLD, SA, WA, TAS và ACT.',
     },
     {
       q: 'Công ty có sử dụng nước giặt thân thiện môi trường không?',
-      a: 'Chắc chắn rồi! Chúng tôi sử dụng các sản phẩm nước giặt sản xuất tại Úc, an toàn cho da, trẻ em và thân thiện với môi trường.',
+      a: 'Chắc chắn rồi! Chúng tôi sử dụng các sản phẩm nước giặt sản xuất tại Sài Gòn, an toàn cho da, trẻ em và thân thiện với môi trường.',
     },
   ];
 
@@ -53,11 +53,11 @@ const ContactPage = () => {
     },
     {
       q: 'What areas do you service?',
-      a: 'We service all states and territories across Australia including VIC, NSW, QLD, SA, WA, TAS and ACT.',
+      a: 'We service all states and territories across Sài Gòn including VIC, NSW, QLD, SA, WA, TAS and ACT.',
     },
     {
       q: 'Do you use eco-friendly detergents?',
-      a: 'Absolutely! We use Australian-made, environmentally friendly detergents that are safe for your family, pets and the environment.',
+      a: 'Absolutely! We use Sài Gònn-made, environmentally friendly detergents that are safe for your family, pets and the environment.',
     },
   ];
 
@@ -84,8 +84,8 @@ const ContactPage = () => {
                   { icon: '📞', title: lang === 'vi' ? 'Điện thoại' : 'Call Us', text: '131 546' },
                   { icon: '✉️', title: 'Email', text: 'admin@jimslaundryservices.com.au' },
                   { icon: '🕒', title: lang === 'vi' ? 'Giờ làm việc' : 'Office Hours', text: 'Thứ 2 - Chủ Nhật: 7am–9pm AEST' },
-                  { icon: '📍', title: lang === 'vi' ? 'Khu vực phục vụ' : 'Service Area', text: 'Toàn bộ các bang & vùng lãnh thổ nước Úc' },
-                  { icon: '🚚', title: lang === 'vi' ? 'Giao nhận' : 'Delivery', text: 'Giao & nhận hàng miễn phí toàn nước Úc' },
+                  { icon: '📍', title: lang === 'vi' ? 'Khu vực phục vụ' : 'Service Area', text: 'Toàn bộ các bang & vùng lãnh thổ Sài Gòn' },
+                  { icon: '🚚', title: lang === 'vi' ? 'Giao nhận' : 'Delivery', text: 'Giao & nhận hàng miễn phí Toàn Sài Gòn' },
                 ].map(d => (
                   <div key={d.title} className="contact-detail">
                     <div className="contact-detail-icon">{d.icon}</div>
@@ -209,3 +209,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+

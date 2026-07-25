@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+﻿import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const AboutPage = () => {
@@ -9,18 +9,18 @@ const AboutPage = () => {
     { icon: '🤝', title: 'Tin Tưởng', desc: 'Tất cả các đối tác nhượng quyền đều được xác minh lý lịch bởi cảnh sát và có bảo hiểm đầy đủ.' },
     { icon: '⭐', title: 'Chất Lượng', desc: 'Chúng tôi sử dụng nước giặt thân thiện môi trường cao cấp và máy móc hiện đại.' },
     { icon: '⚡', title: 'Tiện Lợi', desc: 'Giao nhận miễn phí tận nơi trong 24 giờ — giải quyết việc giặt ủi nhẹ nhàng.' },
-    { icon: '🌿', title: 'Bền Vững', desc: 'Cam kết sử dụng các sản phẩm vệ sinh thân thiện môi trường sản xuất tại Úc.' },
-    { icon: '💬', title: 'Tận Tâm', desc: 'Trung tâm hỗ trợ tại Úc sẵn sàng giải đáp mọi thắc mắc của bạn.' },
-    { icon: '🏅', title: 'Bảo Hành', desc: "Được bảo chứng bởi Cam Kết Chất Lượng Jim's — nếu chưa hài lòng, chúng tôi sẽ xử lý lại miễn phí." },
+    { icon: '🌿', title: 'Bền Vững', desc: 'Cam kết sử dụng các sản phẩm vệ sinh thân thiện môi trường sản xuất tại Sài Gòn.' },
+    { icon: '💬', title: 'Tận Tâm', desc: 'Trung tâm hỗ trợ tại Sài Gòn sẵn sàng giải đáp mọi thắc mắc của bạn.' },
+    { icon: '🏅', title: 'Bảo Hành', desc: "Được bảo chứng bởi Cam Kết Chất Lượng TLaundry — nếu chưa hài lòng, chúng tôi sẽ xử lý lại miễn phí." },
   ];
 
   const valuesEn = [
     { icon: '🤝', title: 'Trust', desc: 'All franchisees are police-checked and fully insured for your peace of mind.' },
     { icon: '⭐', title: 'Quality', desc: 'We use premium eco-friendly detergents and professional-grade equipment for exceptional results.' },
     { icon: '⚡', title: 'Convenience', desc: 'Free pick-up and delivery within 24 hours — laundry sorted without the hassle.' },
-    { icon: '🌿', title: 'Sustainability', desc: 'Committed to Australian-made, environmentally friendly cleaning products.' },
-    { icon: '💬', title: 'Care', desc: 'Australian-based call centre ready to help with any questions or special requirements.' },
-    { icon: '🏅', title: 'Guarantee', desc: "Backed by Jim's Work Guarantee — if you're not satisfied, we'll make it right." },
+    { icon: '🌿', title: 'Sustainability', desc: 'Committed to Sài Gònn-made, environmentally friendly cleaning products.' },
+    { icon: '💬', title: 'Care', desc: 'Sài Gònn-based call centre ready to help with any questions or special requirements.' },
+    { icon: '🏅', title: 'Guarantee', desc: "Backed by TLaundry Work Guarantee — if you're not satisfied, we'll make it right." },
   ];
 
   const values = lang === 'vi' ? valuesVi : valuesEn;
@@ -29,8 +29,8 @@ const AboutPage = () => {
     <main>
       <div className="page-hero">
         <div className="container">
-          <h1>{lang === 'vi' ? "Về Jim's Laundry Services" : "About Jim's Laundry Services"}</h1>
-          <p>{lang === 'vi' ? 'Dịch vụ giặt ủi di động giao nhận tận nơi uy tín hàng đầu tại Úc, thuộc tập đoàn Jim\'s Group.' : 'Australia\'s most trusted mobile laundry pick-up and delivery service, backed by the Jim\'s Group.'}</p>
+          <h1>{lang === 'vi' ? "Về TLaundry" : "About TLaundry"}</h1>
+          <p>{lang === 'vi' ? 'Dịch vụ giặt ủi di động giao nhận tận nơi uy tín hàng đầu tại Sài Gòn, thuộc tập đoàn Jim\'s Group.' : 'Sài Gòn\'s most trusted mobile laundry pick-up and delivery service, backed by the Jim\'s Group.'}</p>
         </div>
       </div>
 
@@ -43,14 +43,14 @@ const AboutPage = () => {
               <h2>{lang === 'vi' ? 'Mang Dịch Vụ Giặt Ủi Chuyên Nghiệp Đến Tận Cửa Nhà Bạn' : 'Bringing Professional Laundry Services to Your Doorstep'}</h2>
               <p>
                 {lang === 'vi'
-                  ? "Jim's Laundry Services thuộc tập đoàn biểu tượng Jim's Group — mạng lưới nhượng quyền thương hiệu số một tại Úc với hơn 5,000 đối tác. Chúng tôi đưa sự chuyên nghiệp vào một trong những công việc thiết yếu nhất hàng ngày: giặt ủi."
-                  : "Jim's Laundry Services is part of the iconic Jim's Group — Australia's number one franchise network with over 5,000 franchisees. We bring professional care to everyday laundry."
+                  ? "TLaundry thuộc tập đoàn biểu tượng TLaundry Group — mạng lưới nhượng quyền thương hiệu số một tại Sài Gòn với hơn 5,000 đối tác. Chúng tôi đưa sự chuyên nghiệp vào một trong những công việc thiết yếu nhất hàng ngày: giặt ủi."
+                  : "TLaundry is part of the iconic TLaundry Group — Sài Gòn's number one franchise network with over 5,000 franchisees. We bring professional care to everyday laundry."
                 }
               </p>
               <p>
                 {lang === 'vi'
-                  ? 'Được thành lập trên nguyên tắc tin cậy, uy tín và chất lượng vượt trội, chúng tôi mang lại giải pháp giặt ủi di động cá nhân hóa cho hộ gia đình, doanh nghiệp và các cơ sở chăm sóc tại Úc.'
-                  : 'Founded on principles of trust and reliability, we provide personalised mobile laundry solutions across Australia.'
+                  ? 'Được thành lập trên nguyên tắc tin cậy, uy tín và chất lượng vượt trội, chúng tôi mang lại giải pháp giặt ủi di động cá nhân hóa cho hộ gia đình, doanh nghiệp và các cơ sở chăm sóc tại Sài Gòn.'
+                  : 'Founded on principles of trust and reliability, we provide personalised mobile laundry solutions across Sài Gòn.'
                 }
               </p>
 
@@ -74,7 +74,7 @@ const AboutPage = () => {
             <div className="about-img">
               <img
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80"
-                alt="Jim's Laundry Services team"
+                alt="TLaundry team"
               />
             </div>
           </div>
@@ -109,3 +109,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -61,7 +61,7 @@ const Header = () => {
               <path d="M32 50 Q40 60 48 54" stroke="#ff2a6d" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
             </svg>
             <div className="logo-text">
-              <span>Jim's</span>
+              <span>TLaundry</span>
               <span>Laundry Services</span>
             </div>
           </Link>
@@ -118,7 +118,7 @@ const Header = () => {
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <div className="logo-text">
-            <span style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: 800 }}>Jim's Laundry</span>
+            <span style={{ color: 'var(--primary)', fontSize: '18px', fontWeight: 800 }}>TLaundry</span>
           </div>
           <button className="mobile-close" onClick={() => setMobileOpen(false)}>✕</button>
         </div>
@@ -162,3 +162,4 @@ const Header = () => {
 };
 
 export default Header;
+

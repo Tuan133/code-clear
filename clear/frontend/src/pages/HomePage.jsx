@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+﻿import { useNavigate } from 'react-router-dom';
 import ReviewsCarousel from '../components/ReviewsCarousel';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -12,7 +12,7 @@ const instaPosts = [
 const partnerLogos = [
   { name: 'Western Bulldogs', color: '#002B5C', text: 'WB' },
   { name: 'Parramatta Eels', color: '#00438D', text: 'PE' },
-  { name: 'Cricket Australia', color: '#006747', text: 'CA' },
+  { name: 'Cricket Sài Gòn', color: '#006747', text: 'CA' },
   { name: 'NZ Rugby', color: '#231F20', text: 'NZR' },
   { name: 'AFL Clubs', color: '#003087', text: 'AFL' },
 ];
@@ -25,17 +25,17 @@ const newsItemsVi = [
   },
   {
     cat: 'Cập Nhật Dịch Vụ',
-    title: "Jim's Laundry Mở Rộng Chi Nhánh Mới Trên Toàn Nước Úc",
+    title: "TLaundry Mở Rộng Chi Nhánh Mới Trên Toàn Sài Gòn",
     img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=300&q=80',
   },
   {
     cat: 'Thân Thiện Môi Trường',
-    title: 'Cam Kết Sử Dụng Nước Giặt Sản Xuất Tại Úc & An Toàn Môi Trường',
+    title: 'Cam Kết Sử Dụng Nước Giặt Sản Xuất tại Sài Gòn & An Toàn Môi Trường',
     img: 'https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=300&q=80',
   },
   {
     cat: 'Nhượng Quyền',
-    title: "5 Lý Do Vì Sao Nhượng Quyền Jim's Là Hướng Đi Kinh Doanh Thông Minh",
+    title: "5 Lý Do Vì Sao Nhượng Quyền TLaundry Là Hướng Đi Kinh Doanh Thông Minh",
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=80',
   },
 ];
@@ -48,17 +48,17 @@ const newsItemsEn = [
   },
   {
     cat: 'Service Updates',
-    title: "Jim's Laundry Expands to New Regions Across Australia",
+    title: "TLaundry Expands to New Regions across Sài Gòn",
     img: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=300&q=80',
   },
   {
     cat: 'Eco Friendly',
-    title: 'Our Commitment to Using Eco-Friendly, Australian-Made Detergents',
+    title: 'Our Commitment to Using Eco-Friendly, Sài Gònn-Made Detergents',
     img: 'https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=300&q=80',
   },
   {
     cat: 'Franchise',
-    title: "5 Reasons Why Becoming a Jim's Franchisee is a Smart Business Move",
+    title: "5 Reasons Why Becoming a TLaundry Franchisee is a Smart Business Move",
     img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=80',
   },
 ];
@@ -132,7 +132,7 @@ const HomePage = () => {
             <div className="who-video">
               <img
                 src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=700&q=80"
-                alt="Jim's Laundry Services team"
+                alt="TLaundry team"
               />
               <div className="play-btn">
                 <div className="play-circle">
@@ -273,7 +273,7 @@ const HomePage = () => {
                       <div className="video-avatar">J</div>
                       <div className="video-info">
                         <strong>{v.handle}</strong>
-                        <span>Jim's Laundry Services</span>
+                        <span>TLaundry</span>
                       </div>
                     </div>
                     <div className="play-btn-red">
@@ -423,3 +423,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

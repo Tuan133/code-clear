@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = ({ onSubscribe }) => {
@@ -27,7 +27,7 @@ const Footer = ({ onSubscribe }) => {
                 <rect x="54" y="43" width="31" height="8" rx="2" fill="white" opacity="0.5"/>
               </svg>
               <div className="logo-text">
-                <span style={{ color: '#ffffff' }}>Jim's</span>
+                <span style={{ color: '#ffffff' }}>TLaundry</span>
                 <span>Laundry Services</span>
               </div>
             </div>
@@ -80,9 +80,9 @@ const Footer = ({ onSubscribe }) => {
                 'New South Wales',
                 'Queensland',
                 'Tasmania',
-                'South Australia',
-                'Western Australia',
-                'Australian Capital Territory',
+                'South Sài Gòn',
+                'Western Sài Gòn',
+                'Sài Gònn Capital Territory',
               ].map(s => (
                 <li key={s}><Link to="/services">{s}</Link></li>
               ))}
@@ -131,3 +131,5 @@ const Footer = ({ onSubscribe }) => {
 };
 
 export default Footer;
+
+

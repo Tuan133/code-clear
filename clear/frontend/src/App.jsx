@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
@@ -84,7 +84,7 @@ function AppLayout() {
           <main style={{ padding: '80px 24px', maxWidth: 800, margin: '0 auto', minHeight: '60vh' }}>
             <h1 style={{ color: 'var(--primary)', fontSize: '2rem', marginBottom: 20 }}>Chính Sách Bảo Mật</h1>
             <p style={{ color: 'var(--text-body)', lineHeight: 1.8 }}>
-              Jim's Laundry Services cam kết bảo vệ thông tin cá nhân của bạn theo Luật Bảo Mật Úc 1988.
+              TLaundry cam kết bảo vệ thông tin cá nhân của bạn theo Luật Bảo Mật Sài Gòn 1988.
             </p>
           </main>
         } />
@@ -92,7 +92,7 @@ function AppLayout() {
           <main style={{ padding: '80px 24px', maxWidth: 800, margin: '0 auto', minHeight: '60vh' }}>
             <h1 style={{ color: 'var(--primary)', fontSize: '2rem', marginBottom: 20 }}>Điều Khoản & Điều Kiện</h1>
             <p style={{ color: 'var(--text-body)', lineHeight: 1.8 }}>
-              Khi sử dụng dịch vụ của Jim's Laundry Services, bạn đồng ý với các điều khoản và điều kiện dịch vụ.
+              Khi sử dụng dịch vụ của TLaundry, bạn đồng ý với các điều khoản và điều kiện dịch vụ.
             </p>
           </main>
         } />
@@ -146,3 +146,5 @@ function App() {
 }
 
 export default App;
+
+

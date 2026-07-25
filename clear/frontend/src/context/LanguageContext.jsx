@@ -1,13 +1,13 @@
-import React, { createContext, useContext, useState } from 'react';
+﻿import React, { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext();
 
 export const translations = {
   vi: {
-    topBar: 'Giao & Nhận Hàng Miễn Phí Trên Toàn Nước Úc',
+    topBar: 'Giao & Nhận Hàng Miễn Phí Trên Toàn Sài Gòn',
     header: {
       aboutUs: 'Về Chúng Tôi',
-      aboutJims: "Về Jim's",
+      aboutJims: "Về TLaundry",
       ourTeam: 'Đội Ngũ Của Chúng Tôi',
       becomeFranchisee: 'Trở Thành Đối Tác Nhượng Quyền',
       services: 'Dịch Vụ',
@@ -36,22 +36,22 @@ export const translations = {
     trustBar: [
       'Giao & Nhận Miễn Phí',
       'Báo Giá Miễn Phí Trong 2 Giờ',
-      'Phục Vụ Toàn Nước Úc',
+      'Phục Vụ Toàn Sài Gòn',
       'Gia Đình & Thương Mại',
-      "Cam Kết Chất Lượng Jim's",
+      "Cam Kết Chất Lượng TLaundry",
       'Nước Giặt 100% Thân Thiện Môi Trường',
     ],
     reviews: {
-      title: "Xem Khách Hàng Nói Gì Về Dịch Vụ Giặt Ủi Của Jim's",
+      title: "Xem Khách Hàng Nói Gì Về Dịch Vụ Giặt Ủi Của TLaundry",
       btnQuote: 'Yêu Cầu Báo Giá Miễn Phí Ngay Hôm Nay',
     },
     whoWeAre: {
-      badge: "Về Jim's Laundry",
-      title: 'Dịch Vụ Giặt Ủi Di Động Nhận & Giao Tận Nơi Được Tin Tưởng Nhất Tại Úc',
-      desc1: "Jim's Laundry Services đã và đang cách mạng hóa cách người dân Úc xử lý công việc giặt ủi. Chúng tôi kết hợp giặt sạch tiêu chuẩn chuyên nghiệp với sự tiện lợi tối đa khi giao nhận miễn phí tận nơi — tất cả trong 24 giờ.",
+      badge: "Về TLaundry",
+      title: 'Dịch Vụ Giặt Ủi Di Động Nhận & Giao Tận Nơi Được Tin Tưởng Nhất tại Sài Gòn',
+      desc1: "TLaundry đã và đang cách mạng hóa cách người dân Sài Gòn xử lý công việc giặt ủi. Chúng tôi kết hợp giặt sạch tiêu chuẩn chuyên nghiệp với sự tiện lợi tối đa khi giao nhận miễn phí tận nơi — tất cả trong 24 giờ.",
       desc2: 'Cho dù là quần áo gia đình hàng ngày, nhu cầu doanh nghiệp hay chăm sóc vải vóc đặc biệt, đội ngũ đối tác nhượng quyền được đào tạo của chúng tôi luôn mang lại chất lượng vượt trội đến tận cửa nhà bạn.',
       features: [
-        'Giao & Nhận Miễn Phí Toàn Nước Úc',
+        'Giao & Nhận Miễn Phí Toàn Sài Gòn',
         'Dịch Vụ Giặt, Sấy & Gấp Gọn',
         'Sản Phẩm Thân Thiện Môi Trường',
         'Trả Hàng Nhanh Trong 24 Giờ',
@@ -89,8 +89,8 @@ export const translations = {
     howToBook: {
       title1: 'Cách Thức ',
       title2: 'Đặt Dịch Vụ',
-      desc: "Đặt dịch vụ với Jim's Laundry vô cùng nhanh chóng, dễ dàng và thuận tiện! Chỉ cần làm theo các bước đơn giản dưới đây.",
-      btn: "Đặt Dịch Vụ Giặt Ủi Jim's",
+      desc: "Đặt dịch vụ với TLaundry vô cùng nhanh chóng, dễ dàng và thuận tiện! Chỉ cần làm theo các bước đơn giản dưới đây.",
+      btn: "Đặt Dịch Vụ Giặt Ủi TLaundry",
       steps: [
         { step: 1, title: 'Yêu cầu báo giá miễn phí' },
         { step: 2, title: 'Hẹn giờ lấy hàng' },
@@ -103,9 +103,9 @@ export const translations = {
       title2: 'Chọn Chúng Tôi?',
       items: [
         'Báo Giá Cung Cấp Trong 2 Giờ!',
-        'Trung Tâm Hỗ Trợ Tại Úc',
-        "Tất Cả Dịch Vụ Được Bảo Hành Bởi Jim's",
-        'Nước Giặt Sản Xuất Tại Úc & Thân Thiện Môi Trường',
+        'Trung Tâm Hỗ Trợ tại Sài Gòn',
+        "Tất Cả Dịch Vụ Được Bảo Hành Bởi TLaundry",
+        'Nước Giặt Sản Xuất tại Sài Gòn & Thân Thiện Môi Trường',
         'Giao & Nhận Miễn Phí',
         'Bảo Hiểm Đầy Đủ',
         'Tất Cả Khai Thác Viên Đã Qua Kiểm Tra Lý Lịch',
@@ -115,7 +115,7 @@ export const translations = {
     socialTestimonials: {
       badge: 'Đánh Giá',
       title: 'Đánh Giá Từ Khách Hàng',
-      desc: "Tại Jim's Laundry Services, chúng tôi đã hoàn thành hàng ngàn lượt giặt cho khách hàng hài lòng từ hộ gia đình đến doanh nghiệp. Hãy nghe cảm nhận từ khách hàng của chúng tôi!",
+      desc: "Tại TLaundry, chúng tôi đã hoàn thành hàng ngàn lượt giặt cho khách hàng hài lòng từ hộ gia đình đến doanh nghiệp. Hãy nghe cảm nhận từ khách hàng của chúng tôi!",
       btn: 'Xem Thêm Đánh Giá',
     },
     instagram: {
@@ -131,12 +131,12 @@ export const translations = {
     franchiseSection: {
       badge: 'Cơ Hội Nhượng Quyền',
       title: 'Bắt Đầu Kinh Doanh Giặt Ủi Jim\'s Của Riêng Bạn Ngay Hôm Nay!',
-      desc: "Gia nhập Jim's Group — Mạng lưới nhượng quyền thương hiệu được nhận diện hàng đầu tại Úc. Với quy trình đào tạo toàn diện và hệ thống đã được kiểm chứng, bạn hoàn toàn có thể tự vận hành doanh nghiệp thành công.",
+      desc: "Gia nhập TLaundry Group — Mạng lưới nhượng quyền thương hiệu được nhận diện hàng đầu tại Sài Gòn. Với quy trình đào tạo toàn diện và hệ thống đã được kiểm chứng, bạn hoàn toàn có thể tự vận hành doanh nghiệp thành công.",
       perks: [
         'Chi phí bắt đầu thấp & được đào tạo bài bản',
         'Khu vực độc quyền tại địa phương của bạn',
         'Làm chủ công việc với hệ thống uy tín từ Jim\'s',
-        'Tham gia mạng lưới nhượng quyền số 1 tại Úc',
+        'Tham gia mạng lưới nhượng quyền số 1 tại Sài Gòn',
         'Hỗ trợ marketing và vận hành liên tục',
       ],
       btn: 'Tìm Hiểu Thêm Về Nhượng Quyền',
@@ -162,7 +162,7 @@ export const translations = {
       emailPlaceholder: 'Nhập địa chỉ email*',
       btnSubscribe: 'ĐĂNG KÝ',
       contactUs: 'Liên Hệ',
-      copyright: "Bản quyền © 2026 Jim's Laundry Services | Chính Sách Bảo Mật | Điều Khoản & Điều Kiện",
+      copyright: "Bản quyền © 2026 TLaundry | Chính Sách Bảo Mật | Điều Khoản & Điều Kiện",
     },
     bookingPage: {
       heroTitle: 'Yêu Cầu Báo Giá Miễn Phí',
@@ -192,7 +192,7 @@ export const translations = {
       confirmTitle: 'Xác Nhận Yêu Cầu Của Bạn',
       confirmSubtitle: 'Vui lòng kiểm tra kỹ thông tin trước khi gửi.',
       successTitle: 'Yêu Cầu Báo Giá Đã Được Gửi!',
-      successDesc: 'Cảm ơn bạn đã liên hệ! Đội ngũ của chúng tôi tại Úc sẽ liên hệ lại với bạn trong vòng 2 giờ kèm báo giá chi tiết.',
+      successDesc: 'Cảm ơn bạn đã liên hệ! Đội ngũ của chúng tôi tại Sài Gòn sẽ liên hệ lại với bạn trong vòng 2 giờ kèm báo giá chi tiết.',
       btnSubmitAnother: 'Gửi Yêu Cầu Khác',
       btnBackHome: 'Về Trang Chủ',
     },
@@ -200,7 +200,7 @@ export const translations = {
       heroTitle: 'Bảng Giá Dịch Vụ Giặt Ủi',
       heroSubtitle: 'Giá cả minh bạch, không chi phí ẩn. Nhận báo giá miễn phí trong 2 giờ!',
       title: 'Mức Giá Minh Bạch & Hợp Lý',
-      subtitle: 'Tất cả chi phí được tính dựa trên nhu cầu thực tế của bạn. Đội ngũ tại Úc sẽ gửi báo giá cá nhân hóa trong 2 giờ.',
+      subtitle: 'Tất cả chi phí được tính dựa trên nhu cầu thực tế của bạn. Đội ngũ tại Sài Gòn sẽ gửi báo giá cá nhân hóa trong 2 giờ.',
       additionalTitle: 'Bảng Giá Tham Khảo Theo Món',
       additionalSubtitle: 'Mức giá tham khảo — báo giá chính xác sẽ được xác nhận sau khi kiểm tra.',
       inclusionsTitle: 'Tất Cả Dịch Vụ Đều Bao Gồm',
@@ -208,18 +208,18 @@ export const translations = {
         { icon: '🚚', text: 'Giao & Nhận Miễn Phí' },
         { icon: '🌿', text: 'Nước Giặt Thân Thiện Môi Trường' },
         { icon: '⚡', text: 'Trả Hàng Trong 24 Giờ' },
-        { icon: '🏅', text: "Cam Kết Chất Lượng Jim's" },
+        { icon: '🏅', text: "Cam Kết Chất Lượng TLaundry" },
       ],
     },
     servicesPage: {
       heroTitle: 'Dịch Vụ Giặt Ủi Của Chúng Tôi',
-      heroSubtitle: 'Dịch vụ giặt ủi nhận tận nơi toàn diện trên toàn nước Úc — từ giặt quần áo gia đình đến dịch vụ thương mại chuyên nghiệp.',
+      heroSubtitle: 'Dịch vụ giặt ủi nhận tận nơi toàn diện trên Toàn Sài Gòn — từ giặt quần áo gia đình đến dịch vụ thương mại chuyên nghiệp.',
       ctaTitle: 'Sẵn Sàng Trải Nghiệm Sự Khác Biệt Từ Jim\'s?',
-      ctaSubtitle: 'Nhận báo giá miễn phí trong 2 giờ. Giao nhận tận nơi miễn phí toàn Úc!',
+      ctaSubtitle: 'Nhận báo giá miễn phí trong 2 giờ. Giao nhận tận nơi miễn phí toàn Sài Gòn!',
     },
     contactPage: {
       heroTitle: 'Liên Hệ Với Chúng Tôi',
-      heroSubtitle: 'Bạn có thắc mắc? Đội ngũ hỗ trợ tại Úc luôn sẵn sàng giúp đỡ bạn trong vòng 2 giờ!',
+      heroSubtitle: 'Bạn có thắc mắc? Đội ngũ hỗ trợ tại Sài Gòn luôn sẵn sàng giúp đỡ bạn trong vòng 2 giờ!',
       infoTitle: 'Thông Tin Liên Hệ',
       infoDesc: 'Dù bạn muốn hỏi về dịch vụ, bảng giá hay đặt lịch lấy hàng, đội ngũ thân thiện của chúng tôi luôn sẵn sàng hỗ trợ 7 ngày trong tuần!',
       formTitle: 'Gửi Tin Nhắn Cho Chúng Tôi',
@@ -233,7 +233,7 @@ export const translations = {
     },
     franchisePage: {
       heroTitle: 'Nhượng Quyền Giặt Ủi Jim\'s Services',
-      heroSubtitle: 'Làm chủ công việc kinh doanh của chính bạn. Gia nhập mạng lưới nhượng quyền số 1 tại Úc.',
+      heroSubtitle: 'Làm chủ công việc kinh doanh của chính bạn. Gia nhập mạng lưới nhượng quyền số 1 tại Sài Gòn.',
       ctaEnquire: 'Đăng Ký Tư Vấn Ngay',
       whyTitle: 'Tại Sao Chọn Nhượng Quyền Jim\'s Laundry?',
       howTitle: 'Quy Trình Bắt Đầu',
@@ -261,10 +261,10 @@ export const translations = {
     },
   },
   en: {
-    topBar: 'FREE Pick-Up & Delivery Australia-Wide',
+    topBar: 'FREE Pick-Up & Delivery Sài Gòn',
     header: {
       aboutUs: 'About Us',
-      aboutJims: "About Jim's",
+      aboutJims: "About TLaundry",
       ourTeam: 'Our Team',
       becomeFranchisee: 'Become A Franchisee',
       services: 'Services',
@@ -293,22 +293,22 @@ export const translations = {
     trustBar: [
       'Free Pick-up & Delivery',
       'Get a FREE Quote within 2 hours',
-      'Servicing Australia-Wide',
+      'Servicing Sài Gòn',
       'Domestic & Commercial',
-      "Jim's Work Guarantee",
+      "TLaundry Work Guarantee",
       '100% Eco-Friendly Detergents',
     ],
     reviews: {
-      title: "See What Our Customers Are Saying About Jim's Laundry Services",
+      title: "See What Our Customers Are Saying About TLaundry",
       btnQuote: 'Request A Free Quote Today',
     },
     whoWeAre: {
-      badge: "About Jim's Laundry",
-      title: "Australia's Most Trusted Mobile Laundry Pick-Up & Delivery Service",
-      desc1: "Jim's Laundry Services has been revolutionising the way Australians handle their laundry. We combine professional-grade cleaning with the ultimate convenience of free pick-up and delivery — all within 24 hours.",
+      badge: "About TLaundry",
+      title: "Sài Gòn's Most Trusted Mobile Laundry Pick-Up & Delivery Service",
+      desc1: "TLaundry has been revolutionising the way Sài Gònns handle their laundry. We combine professional-grade cleaning with the ultimate convenience of free pick-up and delivery — all within 24 hours.",
       desc2: 'Whether it\'s everyday household laundry, commercial needs, or specialised care for delicate fabrics, our trained franchisees deliver exceptional quality right to your door.',
       features: [
-        'Free Pick-up & Delivery Australia-Wide',
+        'Free Pick-up & Delivery Sài Gòn',
         'Wash, Dry & Fold Service',
         'Eco-Friendly Products',
         '24-Hour Turnaround',
@@ -346,8 +346,8 @@ export const translations = {
     howToBook: {
       title1: 'How to ',
       title2: 'Book',
-      desc: "Booking with Jim's Laundry Services is quick, easy, and hassle-free! Just follow the simple steps below to schedule your service and let us take care of the rest.",
-      btn: "Book Jim's Laundry Services",
+      desc: "Booking with TLaundry is quick, easy, and hassle-free! Just follow the simple steps below to schedule your service and let us take care of the rest.",
+      btn: "Book TLaundry",
       steps: [
         { step: 1, title: 'Request a free quote' },
         { step: 2, title: 'Book in a pick up time' },
@@ -360,9 +360,9 @@ export const translations = {
       title2: 'Choose Us?',
       items: [
         'All Quoted Provided within 2 Hours!',
-        'Australian Based Call Centre',
-        "All Services backed by the Jim's Work Guarantee",
-        'Australian-Made & Environmentally Free Detergents',
+        'Sài Gònn Based Call Centre',
+        "All Services backed by the TLaundry Work Guarantee",
+        'Sài Gònn-Made & Environmentally Free Detergents',
         'Free Pick-up & Delivery',
         'Fully Insured',
         'All Franchisees Police Checked',
@@ -372,7 +372,7 @@ export const translations = {
     socialTestimonials: {
       badge: 'Testimonials',
       title: 'Customer Testimonials',
-      desc: "At Jim's Laundry Services, we've completed thousands of washes for satisfied customers across households and businesses alike. Hear from our Happy Customers about their experiences with us!",
+      desc: "At TLaundry, we've completed thousands of washes for satisfied customers across households and businesses alike. Hear from our Happy Customers about their experiences with us!",
       btn: 'Read More Reviews',
     },
     instagram: {
@@ -388,12 +388,12 @@ export const translations = {
     franchiseSection: {
       badge: 'Become a Franchisee',
       title: 'Start Your Own Jim\'s Laundry Business Today!',
-      desc: "Join the Jim's Group — Australia's most recognised franchise network. With full training, ongoing support and a proven system, you can run your own successful laundry business.",
+      desc: "Join the TLaundry Group — Sài Gòn's most recognised franchise network. With full training, ongoing support and a proven system, you can run your own successful laundry business.",
       perks: [
         'Low start-up costs with full training provided',
         'Exclusive territory in your local area',
         'Be your own boss with Jim\'s proven system',
-        'Join Australia\'s #1 franchise network',
+        'Join Sài Gòn\'s #1 franchise network',
         'Ongoing marketing and business support',
       ],
       btn: 'Learn More About Franchising',
@@ -419,7 +419,7 @@ export const translations = {
       emailPlaceholder: 'Email Address*',
       btnSubscribe: 'SUBSCRIBE',
       contactUs: 'Contact Us',
-      copyright: "Copyright © 2026 Jim's Laundry Services | Privacy Policy | Terms and Conditions",
+      copyright: "Copyright © 2026 TLaundry | Privacy Policy | Terms and Conditions",
     },
     bookingPage: {
       heroTitle: 'Request A Free Quote',
@@ -449,7 +449,7 @@ export const translations = {
       confirmTitle: 'Confirm Your Request',
       confirmSubtitle: 'Please review your details before submitting.',
       successTitle: 'Quote Request Submitted!',
-      successDesc: 'Thank you for reaching out! Our Australian-based team will contact you within 2 hours with a personalised quote.',
+      successDesc: 'Thank you for reaching out! Our Sài Gònn-based team will contact you within 2 hours with a personalised quote.',
       btnSubmitAnother: 'Submit Another',
       btnBackHome: 'Back to Home',
     },
@@ -457,7 +457,7 @@ export const translations = {
       heroTitle: 'Laundry Pricing List',
       heroSubtitle: 'Transparent, affordable pricing with no hidden fees. Get a free quote within 2 hours!',
       title: 'Simple, Transparent Pricing',
-      subtitle: 'All pricing is based on your specific requirements. Request a free quote and our Australian-based team will provide a personalised price within 2 hours.',
+      subtitle: 'All pricing is based on your specific requirements. Request a free quote and our Sài Gònn-based team will provide a personalised price within 2 hours.',
       additionalTitle: 'Additional Item Pricing',
       additionalSubtitle: 'Indicative pricing — final quotes provided after assessment.',
       inclusionsTitle: 'All Services Include',
@@ -465,18 +465,18 @@ export const translations = {
         { icon: '🚚', text: 'Free Pick-up & Delivery' },
         { icon: '🌿', text: 'Eco-Friendly Detergents' },
         { icon: '⚡', text: '24-Hour Turnaround' },
-        { icon: '🏅', text: "Jim's Work Guarantee" },
+        { icon: '🏅', text: "TLaundry Work Guarantee" },
       ],
     },
     servicesPage: {
       heroTitle: 'Our Laundry Services',
-      heroSubtitle: 'Comprehensive pick-up laundry services across Australia — from everyday household washing to specialist commercial and care facility laundry.',
+      heroSubtitle: 'Comprehensive pick-up laundry services across Sài Gòn — from everyday household washing to specialist commercial and care facility laundry.',
       ctaTitle: 'Ready to Experience the Jim\'s Difference?',
-      ctaSubtitle: 'Get a free quote within 2 hours. Free pick-up & delivery Australia-wide!',
+      ctaSubtitle: 'Get a free quote within 2 hours. Free pick-up & delivery Sài Gòn!',
     },
     contactPage: {
       heroTitle: 'Contact Us',
-      heroSubtitle: 'Have a question? Our Australian-based team is ready to help you. We respond within 2 hours!',
+      heroSubtitle: 'Have a question? Our Sài Gònn-based team is ready to help you. We respond within 2 hours!',
       infoTitle: 'Get In Touch',
       infoDesc: 'Whether you have questions about our services, pricing or would like to book a pick-up, our friendly team is here to help 7 days a week!',
       formTitle: 'Send Us a Message',
@@ -490,7 +490,7 @@ export const translations = {
     },
     franchisePage: {
       heroTitle: 'Become A Jim\'s Laundry Franchisee',
-      heroSubtitle: 'Be your own boss. Join Australia\'s #1 franchise network and build a thriving laundry business.',
+      heroSubtitle: 'Be your own boss. Join Sài Gòn\'s #1 franchise network and build a thriving laundry business.',
       ctaEnquire: 'Enquire Now',
       whyTitle: 'Why Choose Jim\'s Laundry Franchise?',
       howTitle: 'How to Get Started',
@@ -536,3 +536,5 @@ export const LanguageProvider = ({ children }) => {
 };
 
 export const useLanguage = () => useContext(LanguageContext);
+
+

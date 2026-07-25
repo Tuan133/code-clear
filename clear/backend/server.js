@@ -1,4 +1,4 @@
-import express from 'express';
+﻿import express from 'express';
 import cors from 'cors';
 
 const app = express();
@@ -15,7 +15,7 @@ const giftCards = [];
 
 // API Routes
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: "Jim's Laundry Backend API Server Running" });
+  res.json({ status: 'ok', message: "TLaundry Backend API Server Running" });
 });
 
 // Quote & Booking API
@@ -43,5 +43,6 @@ app.post('/api/gift-card', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Jim's Laundry Backend API running at http://localhost:${PORT}`);
+  console.log(`🚀 TLaundry Backend API running at http://localhost:${PORT}`);
 });
+

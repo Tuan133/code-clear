@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const reviewsEn = [
   {
     id: 1,
-    text: "Jim's Laundry Services is absolutely amazing! They picked up my clothes on time and returned them fresh and perfectly folded. Couldn't be happier!",
+    text: "TLaundry is absolutely amazing! They picked up my clothes on time and returned them fresh and perfectly folded. Couldn't be happier!",
     author: 'Sarah M.',
     location: 'Melbourne, VIC',
     stars: 5,
@@ -13,7 +13,7 @@ const reviewsEn = [
   },
   {
     id: 2,
-    text: "Incredible service! I use Jim's every week for my business attire. The quality is consistently excellent and the pick-up and delivery is always on time.",
+    text: "Incredible service! I use TLaundry every week for my business attire. The quality is consistently excellent and the pick-up and delivery is always on time.",
     author: 'James T.',
     location: 'Sydney, NSW',
     stars: 5,
@@ -21,7 +21,7 @@ const reviewsEn = [
   },
   {
     id: 3,
-    text: "I'm a busy mum and Jim's Laundry has been a lifesaver! Fresh, clean clothes delivered right to my door. The team is so professional and friendly.",
+    text: "I'm a busy mum and TLaundry has been a lifesaver! Fresh, clean clothes delivered right to my door. The team is so professional and friendly.",
     author: 'Emily R.',
     location: 'Brisbane, QLD',
     stars: 5,
@@ -32,7 +32,7 @@ const reviewsEn = [
 const reviewsVi = [
   {
     id: 1,
-    text: "Dịch vụ giặt ủi của Jim's thật sự tuyệt vời! Họ nhận quần áo đúng giờ và trả lại thơm tho, gấp gọn hoàn hảo. Tôi vô cùng hài lòng!",
+    text: "Dịch vụ giặt ủi của TLaundry thật sự tuyệt vời! Họ nhận quần áo đúng giờ và trả lại thơm tho, gấp gọn hoàn hảo. Tôi vô cùng hài lòng!",
     author: 'Thanh Mai',
     location: 'Melbourne, VIC',
     stars: 5,
@@ -40,7 +40,7 @@ const reviewsVi = [
   },
   {
     id: 2,
-    text: "Dịch vụ xuất sắc! Tôi sử dụng Jim's hàng tuần cho trang phục công sở. Chất lượng luôn luôn tuyệt vời và giao nhận vô cùng đúng giờ.",
+    text: "Dịch vụ xuất sắc! Tôi sử dụng TLaundry hàng tuần cho trang phục công sở. Chất lượng luôn luôn tuyệt vời và giao nhận vô cùng đúng giờ.",
     author: 'Quốc Tuấn',
     location: 'Sydney, NSW',
     stars: 5,
@@ -48,7 +48,7 @@ const reviewsVi = [
   },
   {
     id: 3,
-    text: "Tôi là một người mẹ bận rộn và Jim's Laundry thực sự là cứu tinh! Quần áo sạch sẽ, thơm tho được giao tận cửa. Đội ngũ rất chuyên nghiệp và thân thiện.",
+    text: "Tôi là một người mẹ bận rộn và TLaundry thực sự là cứu tinh! Quần áo sạch sẽ, thơm tho được giao tận cửa. Đội ngũ rất chuyên nghiệp và thân thiện.",
     author: 'Bích Phương',
     location: 'Brisbane, QLD',
     stars: 5,
@@ -124,3 +124,4 @@ const ReviewsCarousel = () => {
 };
 
 export default ReviewsCarousel;
+

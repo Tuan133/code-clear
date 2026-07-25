@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -72,7 +72,7 @@ const GiftCardPage = () => {
                     background: 'rgba(0,188,212,0.2)',
                   }} />
                   <div style={{ fontSize: 36, marginBottom: 12 }}>👕</div>
-                  <div style={{ fontSize: 13, fontWeight: 600, opacity: 0.7, marginBottom: 4 }}>Jim's Laundry Services</div>
+                  <div style={{ fontSize: 13, fontWeight: 600, opacity: 0.7, marginBottom: 4 }}>TLaundry</div>
                   <div style={{ fontSize: 48, fontWeight: 900, color: 'var(--cyan)' }}>${finalAmt}</div>
                   <div style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>{t.header.giftCard}</div>
                   <div style={{ marginTop: 24, fontSize: 11, opacity: 0.5 }}>
@@ -151,7 +151,7 @@ const GiftCardPage = () => {
                     <label>{t.giftCardPage.messageLabel}</label>
                     <textarea
                       name="message" value={form.message} onChange={handle}
-                      placeholder={lang === 'vi' ? 'Nhập lời chúc...' : 'Add a message...'}
+                      placeholder={lang === 'vi' ? 'Nhập lời chSài Gòn...' : 'Add a message...'}
                       style={{ minHeight: 80 }}
                     />
                   </div>
@@ -181,3 +181,5 @@ const GiftCardPage = () => {
 };
 
 export default GiftCardPage;
+
+
