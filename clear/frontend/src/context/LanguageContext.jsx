@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext();
 
@@ -68,13 +68,6 @@ export const translations = {
       },
       {
         num: '02.',
-        title: 'Trở Thành Đối Tác Nhượng Quyền',
-        desc: 'Bạn muốn tự do tài chính và làm chủ công việc của mình? Hãy gọi cho đội ngũ Jim\'s và trở thành ông chủ của chính mình!',
-        btn: 'Tìm Hiểu Thêm',
-        href: '/franchise',
-      },
-      {
-        num: '03.',
         title: 'Liên Hệ Với Chúng Tôi',
         desc: 'Nếu bạn có bất kỳ câu hỏi nào khác về dịch vụ giặt ủi giao nhận tận nơi của chúng tôi, đừng ngần ngại liên hệ ngay hôm nay!',
         btn: 'Liên Hệ Ngay',
@@ -325,13 +318,6 @@ export const translations = {
       },
       {
         num: '02.',
-        title: 'Become a Franchisee',
-        desc: 'Want to get that taste of freedom and quit your 9-5? Give the team at Jim\'s a call and be your own boss!',
-        btn: 'Learn More',
-        href: '/franchise',
-      },
-      {
-        num: '03.',
         title: 'Get in Touch',
         desc: "If you have any other questions about our laundry pick-up & delivery services, feel free to contact us today! We've got your back.",
         btn: 'Contact Us',

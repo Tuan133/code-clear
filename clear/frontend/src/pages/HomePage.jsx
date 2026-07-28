@@ -1,6 +1,11 @@
-﻿import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ReviewsCarousel from '../components/ReviewsCarousel';
 import { useLanguage } from '../context/LanguageContext';
+import TruckIcon from '../components/TruckIcon';
+import ShirtHangerIcon from '../components/ShirtHangerIcon';
+import BookingPhoneIcon from '../components/BookingPhoneIcon';
+import CleanClothesIcon from '../components/CleanClothesIcon';
+import { WHY_ICONS } from '../components/WhyIcons';
 
 const instaPosts = [
   { img: 'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=300&q=80', label: 'Gumdale' },
@@ -114,7 +119,11 @@ const HomePage = () => {
           <div className="who-grid">
             <div className="who-content">
               <span className="badge">{t.whoWeAre.badge}</span>
-              <h2>{t.whoWeAre.title}</h2>
+              <h2>
+                {lang === 'vi'
+                  ? <><em>Dịch Vụ Giặt Ủi</em> Di Động Nhận & Giao Tận Nơi Được Tin Tưởng Nhất tại Sài Gòn</>
+                  : <><em>Mobile Laundry</em> Pick-up & Delivery — Sài Gòn's Most Trusted</>}
+              </h2>
               <p>{t.whoWeAre.desc1}</p>
               <p>{t.whoWeAre.desc2}</p>
               <div className="who-features">
@@ -193,7 +202,6 @@ const HomePage = () => {
               >
                 <div className="service-img-wrap">
                   <img src={svc.img} alt={svc.name} />
-                  <div className="service-emoji-badge">😊</div>
                 </div>
                 <div className="service-card-body">
                   <h3>{svc.name}</h3>
@@ -216,15 +224,24 @@ const HomePage = () => {
           </div>
 
           <div className="steps-grid">
-            {t.howToBook.steps.map((s, idx) => (
-              <div key={s.step} className="step-card">
-                <div className="step-circle">
-                  <span style={{ fontSize: 36 }}>{['📱', '🚚', '👕', '✨'][idx]}</span>
-                  <div className="step-number">BƯỚC {s.step}</div>
+            {t.howToBook.steps.map((s, idx) => {
+              const renderIcon = () => {
+                if (idx === 0) return <BookingPhoneIcon size={66} />;
+                if (idx === 1) return <TruckIcon size={72} />;
+                if (idx === 2) return <ShirtHangerIcon size={62} />;
+                if (idx === 3) return <CleanClothesIcon size={66} />;
+                return null;
+              };
+              return (
+                <div key={s.step} className={`step-card step-card--${idx + 1}`}>
+                  <div className="step-circle">
+                    {renderIcon()}
+                    <div className="step-number">BƯỚC {s.step}</div>
+                  </div>
+                  <h3>{s.title}</h3>
                 </div>
-                <h3>{s.title}</h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -234,12 +251,17 @@ const HomePage = () => {
         <div className="container">
           <h2>{t.whyChooseUs.title1} <strong>{t.whyChooseUs.title2}</strong></h2>
           <div className="why-grid">
-            {t.whyChooseUs.items.map((label, idx) => (
-              <div key={label} className="why-card">
-                <div className="why-icon">{['⚙️', '🎧', '🏅', '🌿', '🚚', '🛡️', '🏠', '📋'][idx]}</div>
-                <h3>{label}</h3>
-              </div>
-            ))}
+            {t.whyChooseUs.items.map((label, idx) => {
+              const IconComp = WHY_ICONS[idx];
+              return (
+                <div key={label} className="why-card">
+                  <div className="why-icon">
+                    {IconComp ? <IconComp size={40} /> : null}
+                  </div>
+                  <h3>{label}</h3>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -247,46 +269,75 @@ const HomePage = () => {
       {/* ===== SOCIAL TESTIMONIALS ===== */}
       <section className="social-testimonials">
         <div className="container">
-          <div className="social-grid">
-            <div className="social-left">
-              <span className="badge">{t.socialTestimonials.badge}</span>
-              <div className="social-stars">
-                {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
-              </div>
-              <h2>{t.socialTestimonials.title}</h2>
-              <p>{t.socialTestimonials.desc}</p>
-              <br />
-              <button className="btn btn-primary" onClick={() => navigate('/contact')}>
-                {t.socialTestimonials.btn}
-              </button>
+
+          {/* ── Header centered ── */}
+          <div className="social-header">
+            <span className="badge">{t.socialTestimonials.badge}</span>
+            <div className="social-stars">
+              {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
             </div>
-            <div className="social-videos">
-              {[
-                { handle: '@bookanile Reel', src: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=300&q=80' },
-                { handle: '@misskath Reel', src: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=300&q=80' },
-                { handle: 'A post-adventure h', src: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&q=80' },
-              ].map(v => (
-                <div key={v.handle} className="social-video-card">
-                  <img src={v.src} alt={v.handle} />
-                  <div className="video-overlay">
-                    <div className="video-header">
-                      <div className="video-avatar">J</div>
-                      <div className="video-info">
-                        <strong>{v.handle}</strong>
-                        <span>TLaundry</span>
-                      </div>
-                    </div>
-                    <div className="play-btn-red">
-                      <svg width="48" height="48" viewBox="0 0 68 48" fill="none">
-                        <rect width="68" height="48" rx="10" fill="#ff0000"/>
-                        <polygon points="26,14 26,34 46,24" fill="white"/>
-                      </svg>
+            <h2>
+              {lang === 'vi'
+                ? <><em>Đánh Giá</em> Từ Khách Hàng</>
+                : <><em>Customer</em> Reviews</>}
+            </h2>
+            <p>{t.socialTestimonials.desc}</p>
+            <button className="btn btn-primary" style={{ marginTop: 8 }} onClick={() => navigate('/contact')}>
+              {t.socialTestimonials.btn}
+            </button>
+          </div>
+
+          {/* ── Video grid — 3 cards landscape ── */}
+          <div className="social-videos">
+            {[
+              {
+                handle: '@tlaundrysaigon',
+                label: lang === 'vi' ? 'Nhận đồ tại nhà' : 'Home Pickup',
+                src: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=600&q=80',
+                views: '12K'
+              },
+              {
+                handle: '@tlaundryvn',
+                label: lang === 'vi' ? 'Giặt chuyên nghiệp' : 'Pro Laundry',
+                src: 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=80',
+                views: '8.4K'
+              },
+              {
+                handle: '@tlaundryhcm',
+                label: lang === 'vi' ? 'Giao tận cửa' : 'Delivered Fresh',
+                src: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
+                views: '21K'
+              },
+            ].map(v => (
+              <div key={v.handle} className="social-video-card">
+                <img src={v.src} alt={v.label} loading="lazy" />
+                <div className="video-overlay">
+                  {/* Top: avatar + handle */}
+                  <div className="video-header">
+                    <div className="video-avatar">T</div>
+                    <div className="video-info">
+                      <strong>{v.handle}</strong>
+                      <span>TLaundry</span>
                     </div>
                   </div>
+                  {/* Center: play button */}
+                  <div className="play-btn-red">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                      <circle cx="26" cy="26" r="26" fill="rgba(0,0,0,0.45)"/>
+                      <circle cx="26" cy="26" r="22" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.5"/>
+                      <polygon points="21,17 21,35 38,26" fill="white"/>
+                    </svg>
+                  </div>
+                  {/* Bottom: label + views */}
+                  <div className="video-footer-info">
+                    <span className="video-label">{v.label}</span>
+                    <span className="video-views">👁 {v.views}</span>
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+
         </div>
       </section>
 
