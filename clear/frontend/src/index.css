@@ -8,31 +8,31 @@
 }
 
 :root {
-  --primary: #c2185b;
-  --primary-dark: #880e4f;
-  --primary-light: #e91e63;
-  --cyan: #ff2a6d;
-  --cyan-light: #ff6699;
-  --cyan-dark: #d8004e;
-  --light-blue: #ffe4ec;
-  --lighter-blue: #ffd1dc;
-  --bg-light: #fff5f7;
-  --bg-section: #ffe8ef;
+  --primary: #069494;
+  --primary-dark: #046e6e;
+  --primary-light: #08b2b2;
+  --cyan: #069494;
+  --cyan-light: #0ab8b8;
+  --cyan-dark: #046e6e;
+  --light-blue: #e0f5f5;
+  --lighter-blue: #c8eeee;
+  --bg-light: #f0fbfb;
+  --bg-section: #e0f5f5;
   --white: #ffffff;
-  --text-dark: #4a0e17;
-  --text-body: #4a2c35;
-  --text-gray: #7a5a63;
+  --text-dark: #073a3a;
+  --text-body: #1a4444;
+  --text-gray: #4a7272;
   --red: #e53e3e;
   --red-dark: #c53030;
   --yellow: #ffc107;
-  --border: #f8c0d0;
-  --shadow: 0 4px 20px rgba(194, 24, 91, 0.15);
-  --shadow-lg: 0 8px 40px rgba(194, 24, 91, 0.25);
+  --border: #b3e0e0;
+  --shadow: 0 4px 20px rgba(6, 148, 148, 0.15);
+  --shadow-lg: 0 8px 40px rgba(6, 148, 148, 0.25);
   --radius: 12px;
   --radius-lg: 20px;
   --transition: all 0.3s ease;
-  --pink-gradient: linear-gradient(135deg, #ff8da1 0%, #ff3b68 50%, #c2185b 100%);
-  --pink-btn-gradient: linear-gradient(135deg, #d8005f 0%, #ad0045 100%);
+  --pink-gradient: linear-gradient(135deg, #0ab8b8 0%, #069494 50%, #046e6e 100%);
+  --pink-btn-gradient: linear-gradient(135deg, #069494 0%, #046e6e 100%);
 }
 
 html {
@@ -44,7 +44,7 @@ body {
   color: var(--text-body);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: #fff8fa;
+  background-color: #f8fefe;
 }
 
 a {
@@ -140,7 +140,7 @@ select {
 
 .btn-primary:hover {
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(194, 24, 91, 0.22);
+  box-shadow: 0 6px 20px rgba(6, 148, 148, 0.22);
   border-color: var(--primary-dark);
 }
 
@@ -157,7 +157,7 @@ select {
 
 .btn-solid:hover {
   color: var(--white);
-  box-shadow: 0 8px 24px rgba(136, 14, 79, 0.3);
+  box-shadow: 0 8px 24px rgba(4, 110, 110, 0.3);
 }
 
 /* ─── Outline trên nền tối ─── */
@@ -189,7 +189,7 @@ select {
 
 .btn-cyan:hover {
   color: var(--white);
-  box-shadow: 0 6px 20px rgba(194, 24, 91, 0.22);
+  box-shadow: 0 6px 20px rgba(6, 148, 148, 0.22);
 }
 
 .badge {
@@ -217,7 +217,7 @@ select {
 
 /* ===== TOP BAR ===== */
 .top-bar {
-  background: linear-gradient(90deg, #ff6699 0%, #d8005f 100%);
+  background: linear-gradient(90deg, #0ab8b8 0%, #046e6e 100%);
   color: var(--white);
   text-align: center;
   padding: 10px 24px;
@@ -233,7 +233,7 @@ select {
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 15px rgba(194, 24, 91, 0.1);
+  box-shadow: 0 2px 15px rgba(6, 148, 148, 0.1);
   transition: var(--transition);
 }
 
@@ -398,12 +398,12 @@ select {
   letter-spacing: 0.02em;
   border: 1.5px solid transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 10px rgba(194, 24, 91, 0.2);
+  box-shadow: 0 2px 10px rgba(6, 148, 148, 0.2);
 }
 
 .btn-phone:hover {
   background: var(--primary-dark);
-  box-shadow: 0 6px 18px rgba(136, 14, 79, 0.28);
+  box-shadow: 0 6px 18px rgba(4, 110, 110, 0.28);
 }
 
 .hamburger {
@@ -434,7 +434,7 @@ select {
   width: 300px;
   height: 100vh;
   background: var(--white);
-  box-shadow: -4px 0 30px rgba(194, 24, 91, 0.2);
+  box-shadow: -4px 0 30px rgba(6, 148, 148, 0.2);
   z-index: 9999;
   padding: 24px;
   overflow-y: auto;
@@ -501,7 +501,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: linear-gradient(135deg, rgba(136, 14, 79, 0.88) 0%, rgba(255, 75, 114, 0.78) 50%, rgba(216, 0, 95, 0.85) 100%),
+  background: linear-gradient(135deg, rgba(4, 110, 110, 0.88) 0%, rgba(6, 180, 180, 0.78) 50%, rgba(4, 130, 130, 0.85) 100%),
     url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=1400&q=80') center/cover no-repeat;
   overflow: hidden;
 }
@@ -516,7 +516,7 @@ select {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(255, 141, 161, 0.4), transparent 60%);
+  background: radial-gradient(circle at top right, rgba(10, 184, 184, 0.4), transparent 60%);
 }
 
 .hero-content {
@@ -531,7 +531,7 @@ select {
   font-size: clamp(2.8rem, 5.5vw, 4.6rem);
   font-weight: 900;
   line-height: 1.12;
-  color: #ffe4ec;
+  color: #e0f5f5;
   margin-bottom: 20px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   letter-spacing: -0.02em;
@@ -539,7 +539,7 @@ select {
 
 .hero h1 span {
   color: var(--white);
-  background: linear-gradient(120deg, #ffffff, #ffccd5);
+  background: linear-gradient(120deg, #ffffff, #c8f0f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -601,10 +601,10 @@ select {
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
-  background: linear-gradient(90deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);
+  background: linear-gradient(90deg, #046e6e 0%, #058080 50%, #069494 100%);
   padding: 18px 24px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(136, 14, 79, 0.2);
+  box-shadow: 0 4px 15px rgba(4, 110, 110, 0.2);
 }
 
 .trust-bar-inner {
@@ -639,13 +639,13 @@ select {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ff8da1;
+  background: #7de8e8;
   flex-shrink: 0;
 }
 
 /* ===== TESTIMONIALS CAROUSEL ===== */
 .testimonials-top {
-  background: linear-gradient(180deg, #fff5f7 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #f0fbfb 0%, #ffffff 100%);
   padding: 72px 0 64px;
 }
 
@@ -688,7 +688,7 @@ select {
   border-radius: 50px;
   padding: 7px 18px;
   margin-bottom: 22px;
-  box-shadow: 0 2px 10px rgba(194,24,91,0.07);
+  box-shadow: 0 2px 10px rgba(6, 148, 148, 0.07);
 }
 
 .reviews-badge-stars {
@@ -795,7 +795,7 @@ select {
   border-radius: 20px;
   padding: 24px 22px 20px;
   flex-shrink: 0;
-  box-shadow: 0 2px 16px rgba(194, 24, 91, 0.07);
+  box-shadow: 0 2px 16px rgba(6, 148, 148, 0.07);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -806,7 +806,7 @@ select {
 
 .review-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(194, 24, 91, 0.15);
+  box-shadow: 0 12px 32px rgba(6, 148, 148, 0.15);
   border-color: var(--primary-light);
 }
 
@@ -935,13 +935,13 @@ select {
   transition: var(--transition);
   font-size: 20px;
   line-height: 1;
-  box-shadow: 0 3px 12px rgba(194,24,91,0.25);
+  box-shadow: 0 3px 12px rgba(6, 148, 148, 0.25);
 }
 
 .carousel-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #ad0045 0%, #880e4f 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #046e6e 100%);
   transform: scale(1.1);
-  box-shadow: 0 5px 16px rgba(194,24,91,0.35);
+  box-shadow: 0 5px 16px rgba(6, 148, 148, 0.35);
 }
 
 .carousel-btn:disabled {
@@ -1102,7 +1102,7 @@ select {
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 4px 20px rgba(136, 14, 79, 0.3);
+  box-shadow: 0 4px 20px rgba(4, 110, 110, 0.3);
 }
 
 .play-circle:hover {
@@ -1234,7 +1234,7 @@ select {
 }
 
 .service-card.active {
-  background: rgba(255, 42, 109, 0.1);
+  background: rgba(6, 148, 148, 0.1);
   border-color: var(--primary);
 }
 
@@ -1284,7 +1284,7 @@ select {
 
 /* ===== HOW TO BOOK ===== */
 .how-to-book {
-  background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #058080 50%, #069494 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -1305,7 +1305,7 @@ select {
 }
 
 .how-header h2 span {
-  color: #ffccd5;
+  color: #b2f0f0;
 }
 
 .how-header p {
@@ -1352,14 +1352,14 @@ select {
 
 .step-card:hover .step-circle {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 30px rgba(255, 200, 220, 0.35);
+  box-shadow: 0 0 30px rgba(10, 184, 184, 0.35);
   transform: scale(1.05);
 }
 
 /* Step 2 truck highlight */
 .step-card--2 .step-circle {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 24px rgba(255, 180, 200, 0.3);
+  box-shadow: 0 0 24px rgba(10, 184, 184, 0.3);
   width: 130px;
   height: 130px;
 }
@@ -1373,19 +1373,19 @@ select {
   position: absolute;
   top: -5px;
   right: -5px;
-  background: #ff4b72;
+  background: #0ab8b8;
   color: var(--white);
   font-size: 11px;
   font-weight: 800;
   padding: 2px 8px;
   border-radius: 12px;
   line-height: 1.8;
-  box-shadow: 0 2px 8px rgba(255, 75, 114, 0.5);
+  box-shadow: 0 2px 8px rgba(10, 184, 184, 0.5);
 }
 
 .step-card--2 .step-number {
-  background: #ff2a6d;
-  box-shadow: 0 2px 10px rgba(255, 42, 109, 0.6);
+  background: #069494;
+  box-shadow: 0 2px 10px rgba(6, 148, 148, 0.6);
 }
 
 /* Step 3 shirt-hanger highlight */
@@ -1403,8 +1403,8 @@ select {
 }
 
 .step-card--3 .step-number {
-  background: #ff2a6d;
-  box-shadow: 0 2px 10px rgba(255, 42, 109, 0.6);
+  background: #069494;
+  box-shadow: 0 2px 10px rgba(6, 148, 148, 0.6);
 }
 
 .step-card h3 {
@@ -1456,11 +1456,11 @@ select {
   margin: 0 auto 16px;
   font-size: 36px;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(173, 0, 69, 0.3);
+  box-shadow: 0 4px 15px rgba(4, 110, 110, 0.3);
 }
 
 .why-card:hover .why-icon {
-  background: linear-gradient(135deg, #ff4b72 0%, #d8005f 100%);
+  background: linear-gradient(135deg, #0ab8b8 0%, #069494 100%);
   transform: scale(1.08);
 }
 
@@ -1542,7 +1542,7 @@ select {
 
 .social-video-card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 16px 40px rgba(194, 24, 91, 0.18);
+  box-shadow: 0 16px 40px rgba(6, 148, 148, 0.18);
 }
 
 .social-video-card img {
@@ -1648,7 +1648,7 @@ select {
 
 /* ===== FRANCHISE ===== */
 .franchise-section {
-  background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #058080 50%, #069494 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -1662,7 +1662,7 @@ select {
 }
 
 .franchise-content .badge {
-  background: #ff4b72;
+  background: #0ab8b8;
 }
 
 .franchise-content h2 {
@@ -1700,7 +1700,7 @@ select {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ff4b72;
+  background: #0ab8b8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1723,7 +1723,7 @@ select {
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 16px;
-  border: 4px solid #ff4b72;
+  border: 4px solid #0ab8b8;
 }
 
 .franchise-avatar img {
@@ -1742,7 +1742,7 @@ select {
 
 .franchise-name {
   font-weight: 700;
-  color: #ffccd5;
+  color: #b2f0f0;
   font-size: 15px;
 }
 
@@ -1764,7 +1764,7 @@ select {
   display: block;
   font-size: 13px;
   font-weight: 800;
-  color: #ffe4ec;
+  color: #c8f0f0;
   margin-bottom: 4px;
   line-height: 1.3;
 }
@@ -1826,60 +1826,111 @@ select {
 }
 
 .subscribe-form button:hover {
-  background: #590833;
+  background: #035555;
   transform: translateY(-2px);
 }
 
 /* ===== INSTAGRAM ===== */
 .instagram-section {
-  background: var(--white);
-  padding: 80px 0;
+  background: #d9f4f4;
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative blobs for depth */
+.instagram-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.instagram-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -60px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(5, 208, 200, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .instagram-header {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 1;
 }
 
 .instagram-header h2 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 800;
-  color: var(--primary-dark);
-  margin-bottom: 8px;
+  color: #024a4a;
+  margin-bottom: 10px;
+  text-shadow: none;
+  letter-spacing: -0.02em;
 }
 
 .instagram-handle {
   font-size: 15px;
-  color: var(--primary);
+  color: #037070;
   font-weight: 700;
+  background: rgba(2, 74, 74, 0.1);
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(2, 74, 74, 0.25);
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.02em;
 }
 
 .instagram-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 14px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
 }
 
 .insta-post {
-  border-radius: var(--radius);
+  border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 1;
   position: relative;
   cursor: pointer;
   background: #111;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255,255,255,0.05);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s ease;
+}
+
+.insta-post:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .insta-post img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .insta-post:hover img {
-  transform: scale(1.05);
-  opacity: 0.7;
+  transform: scale(1.08);
+  opacity: 0.75;
 }
 
 .insta-play {
@@ -1888,19 +1939,47 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.35) 100%);
 }
 
 .insta-play svg {
   color: var(--white);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.insta-post:hover .insta-play svg {
+  transform: scale(1.15);
 }
 
 .instagram-ctas {
   display: flex;
   gap: 12px;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
+
+.instagram-ctas .btn {
+  backdrop-filter: blur(8px);
+  border: 1.5px solid #024a4a !important;
+  background: #024a4a !important;
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 13px 32px;
+  border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(2, 74, 74, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-ctas .btn:hover {
+  background: #037070 !important;
+  border-color: #037070 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(2, 74, 74, 0.35);
+}
+
 
 /* ===== PARTNERSHIPS ===== */
 .partnerships-section {
@@ -2044,7 +2123,7 @@ select {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(135deg, #590833 0%, #880e4f 50%, #ad1457 100%);
+  background: linear-gradient(135deg, #023a3a 0%, #046e6e 50%, #069494 100%);
   padding: 70px 0 0;
 }
 
@@ -2078,23 +2157,40 @@ select {
 }
 
 .social-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  transition: var(--transition);
-  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .social-icon:hover {
-  background: #ff4b72;
-  border-color: #ff4b72;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.social-icon.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.45);
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(220, 39, 67, 0.45);
+}
+
+.social-icon.tiktok:hover {
+  background: #010101;
+  border-color: #fe2c55;
+  box-shadow: 0 6px 16px rgba(254, 44, 85, 0.45);
 }
 
 .footer-col h4 {
@@ -2115,7 +2211,7 @@ select {
 }
 
 .footer-col ul li a:hover {
-  color: #ffccd5;
+  color: #b2f0f0;
   padding-left: 4px;
 }
 
@@ -2158,7 +2254,7 @@ select {
 .footer-form button {
   padding: 12px 20px;
   border-radius: 8px;
-  background: #ff4b72;
+  background: #069494;
   color: var(--white);
   font-weight: 700;
   font-size: 13px;
@@ -2168,7 +2264,7 @@ select {
 }
 
 .footer-form button:hover {
-  background: #d8005f;
+  background: #046e6e;
 }
 
 .footer-contact-info {
@@ -2186,7 +2282,7 @@ select {
 }
 
 .footer-contact-item svg {
-  color: #ff8da1;
+  color: #7de8e8;
   flex-shrink: 0;
 }
 
@@ -2207,7 +2303,7 @@ select {
 }
 
 .footer-bottom a:hover {
-  color: #ffccd5;
+  color: #b2f0f0;
 }
 
 /* ===== BACK TO TOP ===== */
@@ -2238,7 +2334,7 @@ select {
 }
 
 .back-to-top:hover {
-  background: linear-gradient(135deg, #ad0045 0%, #880e4f 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #023a3a 100%);
   transform: translateY(-3px);
 }
 
@@ -2283,13 +2379,13 @@ select {
 }
 
 .chat-btn:hover {
-  background: linear-gradient(135deg, #ad0045 0%, #880e4f 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #023a3a 100%);
   transform: scale(1.08);
 }
 
 /* ===== PAGES ===== */
 .page-hero {
-  background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #058080 50%, #069494 100%);
   padding: 80px 0;
   text-align: center;
 }
@@ -2366,7 +2462,7 @@ select {
 }
 
 .step-dot.done {
-  background: #ff4b72;
+  background: #069494;
   color: var(--white);
 }
 
@@ -2377,7 +2473,7 @@ select {
 }
 
 .step-line.done {
-  background: #ff4b72;
+  background: #069494;
 }
 
 .booking-card h2 {
@@ -2477,7 +2573,7 @@ select {
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.15);
+  box-shadow: 0 0 0 3px rgba(6, 148, 148, 0.15);
 }
 
 .form-group textarea {
@@ -2543,11 +2639,11 @@ select {
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(173, 0, 69, 0.3);
+  box-shadow: 0 4px 15px rgba(4, 110, 110, 0.3);
 }
 
 .btn-next:hover {
-  background: linear-gradient(135deg, #ad0045 0%, #880e4f 100%);
+  background: linear-gradient(135deg, #046e6e 0%, #023a3a 100%);
   transform: translateY(-2px);
 }
 

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -49,17 +49,6 @@ const Header = () => {
         <nav className="nav">
           {/* Logo */}
           <Link to="/" className="logo">
-            <svg className="logo-icon" width="60" height="60" viewBox="0 0 100 80" fill="none">
-              <circle cx="30" cy="20" r="16" fill="#c2185b" stroke="#ff2a6d" strokeWidth="2"/>
-              <circle cx="30" cy="14" r="6" fill="#ffffff"/>
-              <rect x="20" y="28" width="20" height="24" rx="3" fill="#c2185b"/>
-              <path d="M20 32 Q10 36 12 44 Q14 52 22 52" stroke="#ff2a6d" strokeWidth="2" fill="none"/>
-              <rect x="52" y="15" width="35" height="28" rx="4" fill="#ff2a6d" stroke="#c2185b" strokeWidth="1.5"/>
-              <circle cx="62" cy="29" r="6" fill="white" opacity="0.8"/>
-              <circle cx="75" cy="29" r="6" fill="white" opacity="0.8"/>
-              <rect x="54" y="43" width="31" height="8" rx="2" fill="#c2185b"/>
-              <path d="M32 50 Q40 60 48 54" stroke="#ff2a6d" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-            </svg>
             <div className="logo-text">
               <span>TLaundry</span>
               <span>Laundry Services</span>

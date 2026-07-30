@@ -14,14 +14,6 @@ const instaPosts = [
   { img: 'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=300&q=80', label: 'Pickup service' },
 ];
 
-const partnerLogos = [
-  { name: 'Western Bulldogs', color: '#002B5C', text: 'WB' },
-  { name: 'Parramatta Eels', color: '#00438D', text: 'PE' },
-  { name: 'Cricket Sài Gòn', color: '#006747', text: 'CA' },
-  { name: 'NZ Rugby', color: '#231F20', text: 'NZR' },
-  { name: 'AFL Clubs', color: '#003087', text: 'AFL' },
-];
-
 const newsItemsVi = [
   {
     cat: 'Mẹo Giặt Ủi',
@@ -236,7 +228,6 @@ const HomePage = () => {
                 <div key={s.step} className={`step-card step-card--${idx + 1}`}>
                   <div className="step-circle">
                     {renderIcon()}
-                    <div className="step-number">BƯỚC {s.step}</div>
                   </div>
                   <h3>{s.title}</h3>
                 </div>
@@ -346,7 +337,7 @@ const HomePage = () => {
         <div className="container">
           <div className="instagram-header">
             <h2>{t.instagram.title}</h2>
-            <div className="instagram-handle">@jimslaundryservices</div>
+            <div className="instagram-handle">@tlaundry.by.tnt</div>
           </div>
           <div className="instagram-grid">
             {instaPosts.map((p, i) => (
@@ -362,9 +353,8 @@ const HomePage = () => {
             ))}
           </div>
           <div className="instagram-ctas">
-            <button className="btn btn-primary">{t.instagram.btnLoadMore}</button>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/tlaundry.by.tnt/?utm_source=ig_web_button_share_sheet"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline"
@@ -376,78 +366,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== PARTNERSHIPS ===== */}
-      <section className="partnerships-section">
-        <div className="container">
-          <h2>{t.partnerships.title1} <span>{t.partnerships.title2}</span></h2>
-          <p className="subtext">{t.partnerships.subtext}</p>
-          <div className="partners-logos">
-            {partnerLogos.map(p => (
-              <div key={p.name} className="partner-logo">
-                <div style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: '50%',
-                  background: p.color,
-                  color: 'white',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 800,
-                  fontSize: 11,
-                  textAlign: 'center'
-                }}>
-                  {p.text}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ===== FRANCHISE CTA ===== */}
-      <section className="franchise-section">
-        <div className="container">
-          <div className="franchise-grid">
-            <div className="franchise-content">
-              <span className="badge">{t.franchiseSection.badge}</span>
-              <h2>{t.franchiseSection.title}</h2>
-              <p>{t.franchiseSection.desc}</p>
-              <div className="franchise-perks">
-                {t.franchiseSection.perks.map(p => (
-                  <div key={p} className="franchise-perk">
-                    <div className="franchise-perk-check">✓</div>
-                    {p}
-                  </div>
-                ))}
-              </div>
-              <button className="btn btn-cyan" onClick={() => navigate('/franchise')}>
-                {t.franchiseSection.btn}
-              </button>
-            </div>
-            <div>
-              <div className="franchise-card">
-                <div className="franchise-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80"
-                    alt="Franchisee"
-                  />
-                </div>
-                <p className="franchise-quote">{t.franchiseSection.quote}</p>
-                <div className="franchise-name">{t.franchiseSection.name}</div>
-                <div className="franchise-highlights">
-                  {t.franchiseSection.highlights.map(h => (
-                    <div key={h.span} className="franchise-highlight">
-                      <strong>{h.strong}</strong>
-                      <span>{h.span}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ===== NEWS ===== */}
       <section className="news-section">

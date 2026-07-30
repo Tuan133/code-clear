@@ -114,7 +114,7 @@ export const translations = {
     instagram: {
       title: 'Theo Dõi Chúng Tôi Trên Instagram',
       btnLoadMore: 'Tải Thêm',
-      btnFollow: '📸 Theo Dõi Trên Instagram',
+      btnFollow: 'Theo Dõi Trên Instagram',
     },
     partnerships: {
       title1: 'Đối Tác Đồng Hành ',
@@ -364,7 +364,7 @@ export const translations = {
     instagram: {
       title: 'Follow Us on Instagram',
       btnLoadMore: 'Load More',
-      btnFollow: '📸 Follow on Instagram',
+      btnFollow: 'Follow on Instagram',
     },
     partnerships: {
       title1: 'See Whose Dirty Laundry ',
