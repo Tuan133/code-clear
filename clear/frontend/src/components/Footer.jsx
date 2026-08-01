@@ -70,7 +70,6 @@ const Footer = ({ onSubscribe }) => {
                 { label: t.header.pricing, href: '/pricing' },
                 { label: t.header.giftCard, href: '/gift-card' },
                 { label: t.header.contact, href: '/contact' },
-                { label: t.header.becomeFranchisee, href: '/franchise' },
               ].map(l => (
                 <li key={l.label}><Link to={l.href}>{l.label}</Link></li>
               ))}

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -36,7 +36,15 @@ const GiftCardPage = () => {
         <div className="container">
           {ordered ? (
             <div style={{ maxWidth: 600, margin: '0 auto', textAlign: 'center', background: 'white', borderRadius: 'var(--radius-lg)', padding: 60, boxShadow: 'var(--shadow-lg)' }}>
-              <div style={{ fontSize: 64, marginBottom: 20 }}>🎁</div>
+              <div className="gift-card-success-badge">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 12v10H4V12"/>
+                  <path d="M2 7h20v5H2z"/>
+                  <path d="M12 22V7"/>
+                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                </svg>
+              </div>
               <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: 12 }}>
                 {t.giftCardPage.orderedTitle}
               </h2>
@@ -57,11 +65,11 @@ const GiftCardPage = () => {
               {/* Gift card preview */}
               <div>
                 <div style={{
-                  background: 'linear-gradient(135deg, var(--primary) 0%, #1565c0 100%)',
+                  background: 'linear-gradient(135deg, var(--primary) 0%, #046e6e 100%)',
                   borderRadius: 20,
                   padding: 40,
                   color: 'white',
-                  boxShadow: 'var(--shadow-lg)',
+                  boxShadow: '0 12px 32px rgba(6, 148, 148, 0.25)',
                   marginBottom: 28,
                   position: 'relative',
                   overflow: 'hidden',
@@ -69,13 +77,21 @@ const GiftCardPage = () => {
                   <div style={{
                     position: 'absolute', top: -40, right: -40,
                     width: 160, height: 160, borderRadius: '50%',
-                    background: 'rgba(0,188,212,0.2)',
+                    background: 'rgba(255,255,255,0.12)',
                   }} />
-                  <div style={{ fontSize: 36, marginBottom: 12 }}>👕</div>
-                  <div style={{ fontSize: 13, fontWeight: 600, opacity: 0.7, marginBottom: 4 }}>TLaundry</div>
-                  <div style={{ fontSize: 48, fontWeight: 900, color: 'var(--cyan)' }}>${finalAmt}</div>
-                  <div style={{ fontSize: 13, opacity: 0.7, marginTop: 4 }}>{t.header.giftCard}</div>
-                  <div style={{ marginTop: 24, fontSize: 11, opacity: 0.5 }}>
+                  <div className="gift-card-badge">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="2" width="18" height="20" rx="3"/>
+                      <circle cx="12" cy="13" r="5"/>
+                      <path d="M12 10a3 3 0 0 0-3 3"/>
+                      <circle cx="7" cy="5" r="1" fill="currentColor"/>
+                      <circle cx="10" cy="5" r="1" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', opacity: 0.85, marginBottom: 4 }}>TLaundry</div>
+                  <div style={{ fontSize: 48, fontWeight: 900, color: 'var(--white)' }}>${finalAmt}</div>
+                  <div style={{ fontSize: 13, opacity: 0.85, marginTop: 4 }}>{t.header.giftCard}</div>
+                  <div style={{ marginTop: 24, fontSize: 11, opacity: 0.75, letterSpacing: '0.02em' }}>
                     {lang === 'vi' ? 'Có giá trị cho tất cả dịch vụ giặt ủi Jim\'s' : 'Valid for all Jim\'s Laundry services'}
                   </div>
                 </div>
@@ -151,7 +167,7 @@ const GiftCardPage = () => {
                     <label>{t.giftCardPage.messageLabel}</label>
                     <textarea
                       name="message" value={form.message} onChange={handle}
-                      placeholder={lang === 'vi' ? 'Nhập lời chSài Gòn...' : 'Add a message...'}
+                      placeholder={lang === 'vi' ? 'Nhập lời chúc...' : 'Add a message...'}
                       style={{ minHeight: 80 }}
                     />
                   </div>
@@ -167,7 +183,14 @@ const GiftCardPage = () => {
                     {lang === 'vi' ? 'Tổng tiền:' : 'Total:'} ${finalAmt || 0}.00 AUD
                   </div>
 
-                  <button type="submit" className="btn-next" style={{ width: '100%' }}>
+                  <button type="submit" className="btn-next" style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 12v10H4V12"/>
+                      <path d="M2 7h20v5H2z"/>
+                      <path d="M12 22V7"/>
+                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                    </svg>
                     {t.giftCardPage.btnPurchase}
                   </button>
                 </form>

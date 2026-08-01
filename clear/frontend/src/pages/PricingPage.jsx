@@ -1,4 +1,4 @@
-﻿import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const PricingPage = () => {
@@ -7,7 +7,15 @@ const PricingPage = () => {
 
   const pricingPlansVi = [
     {
-      icon: '🏠',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="2" width="18" height="20" rx="3"/>
+          <circle cx="12" cy="13" r="5"/>
+          <path d="M12 10a3 3 0 0 0-3 3"/>
+          <circle cx="7" cy="5" r="1" fill="currentColor"/>
+          <circle cx="10" cy="5" r="1" fill="currentColor"/>
+        </svg>
+      ),
       name: 'Giặt Ủi Gia Đình',
       note: 'Giá tính theo trọng lượng — gọi cho chúng tôi để có báo giá chính xác theo số lượng đồ của bạn.',
       featured: false,
@@ -21,7 +29,13 @@ const PricingPage = () => {
       ],
     },
     {
-      icon: '👔',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3a2.5 2.5 0 0 0-2.5 2.5v1.25L3 11a1.5 1.5 0 0 0 .5 2.8h17a1.5 1.5 0 0 0 .5-2.8l-6.5-4.25V5.5A2.5 2.5 0 0 0 12 3z"/>
+          <path d="M12 13.8v7.2"/>
+          <path d="M8 17h8"/>
+        </svg>
+      ),
       name: 'Là/Ủi & Giặt Khô Hấp',
       note: 'Tính giá theo từng món. Có ưu đãi giảm giá khi giặt từ 10 món trở lên. Liên hệ để nhận báo giá.',
       featured: true,
@@ -35,7 +49,14 @@ const PricingPage = () => {
       ],
     },
     {
-      icon: '🏢',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/>
+          <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+          <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+          <path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>
+        </svg>
+      ),
       name: 'Dịch Vụ Thương Mại',
       note: 'Mức giá thiết kế riêng cho doanh nghiệp. Giảm giá theo số lượng cho hợp đồng dài hạn.',
       featured: false,
@@ -52,7 +73,15 @@ const PricingPage = () => {
 
   const pricingPlansEn = [
     {
-      icon: '🏠',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="2" width="18" height="20" rx="3"/>
+          <circle cx="12" cy="13" r="5"/>
+          <path d="M12 10a3 3 0 0 0-3 3"/>
+          <circle cx="7" cy="5" r="1" fill="currentColor"/>
+          <circle cx="10" cy="5" r="1" fill="currentColor"/>
+        </svg>
+      ),
       name: 'Domestic Laundry',
       note: 'Prices based on weight — call us for an exact quote based on your load size.',
       featured: false,
@@ -66,7 +95,13 @@ const PricingPage = () => {
       ],
     },
     {
-      icon: '👔',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3a2.5 2.5 0 0 0-2.5 2.5v1.25L3 11a1.5 1.5 0 0 0 .5 2.8h17a1.5 1.5 0 0 0 .5-2.8l-6.5-4.25V5.5A2.5 2.5 0 0 0 12 3z"/>
+          <path d="M12 13.8v7.2"/>
+          <path d="M8 17h8"/>
+        </svg>
+      ),
       name: 'Ironing & Dry Cleaning',
       note: 'Per-item pricing available. Bundle discounts for 10+ items. Contact us for a custom quote.',
       featured: true,
@@ -80,7 +115,14 @@ const PricingPage = () => {
       ],
     },
     {
-      icon: '🏢',
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/>
+          <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+          <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+          <path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>
+        </svg>
+      ),
       name: 'Commercial Services',
       note: 'Tailored pricing for businesses. Volume discounts for regular bookings.',
       featured: false,
@@ -129,6 +171,48 @@ const PricingPage = () => {
 
   const additionalItems = lang === 'vi' ? additionalItemsVi : additionalItemsEn;
 
+  const inclusionsList = [
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="1" y="3" width="15" height="13" rx="2"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      ),
+      text: lang === 'vi' ? 'Giao & Nhận Miễn Phí' : 'Free Pick-up & Delivery'
+    },
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 7 0 6-4.5 11-10 11z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+      ),
+      text: lang === 'vi' ? 'Nước Giặt Thân Thiện Môi Trường' : 'Eco-Friendly Detergents'
+    },
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      ),
+      text: lang === 'vi' ? 'Trả Hàng Trong 24 Giờ' : '24-Hour Turnaround'
+    },
+    {
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          <path d="m9 8 2 2 4-4"/>
+        </svg>
+      ),
+      text: lang === 'vi' ? 'Cam Kết Chất Lượng TLaundry' : 'TLaundry Work Guarantee'
+    },
+  ];
+
   return (
     <main>
       <div className="page-hero">
@@ -149,7 +233,7 @@ const PricingPage = () => {
             {pricingPlans.map(plan => (
               <div key={plan.name} className={`pricing-card ${plan.featured ? 'featured' : ''}`}>
                 {plan.featured && <div className="pricing-featured-badge">{lang === 'vi' ? 'Phổ Biến Nhất' : 'Most Popular'}</div>}
-                <div className="pricing-icon">{plan.icon}</div>
+                <div className="pricing-card-icon-box">{plan.icon}</div>
                 <h3>{plan.name}</h3>
                 <p className="price-note">{plan.note}</p>
                 <div className="pricing-features">
@@ -203,21 +287,16 @@ const PricingPage = () => {
       </section>
 
       {/* Inclusions */}
-      <section style={{ background: 'var(--primary)', padding: '60px 0' }}>
+      <section className="pricing-inclusions-section">
         <div className="container">
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.8rem', fontWeight: 800, marginBottom: 40 }}>
+          <h2 className="pricing-inclusions-title">
             {t.pricingPage.inclusionsTitle}
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-            {t.pricingPage.inclusions.map(inc => (
-              <div key={inc.text} style={{
-                background: 'rgba(255,255,255,0.1)',
-                borderRadius: 'var(--radius)',
-                padding: '24px',
-                textAlign: 'center',
-              }}>
-                <div style={{ fontSize: 36, marginBottom: 12 }}>{inc.icon}</div>
-                <p style={{ color: 'white', fontWeight: 700, fontSize: 15 }}>{inc.text}</p>
+          <div className="pricing-inclusions-grid">
+            {inclusionsList.map(inc => (
+              <div key={inc.text} className="inclusion-card">
+                <div className="inclusion-icon-box">{inc.icon}</div>
+                <p className="inclusion-card-text">{inc.text}</p>
               </div>
             ))}
           </div>

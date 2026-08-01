@@ -18,15 +18,99 @@ const BookingPage = () => {
   const STEPS = [t.bookingPage.step1, t.bookingPage.step2, t.bookingPage.step3];
 
   const serviceTypes = [
-    { icon: '🏠', label: t.header.domestic },
-    { icon: '🏢', label: t.header.commercial },
-    { icon: '👔', label: t.header.ironing },
-    { icon: '🧥', label: t.header.dryCleaning },
-    { icon: '🛏️', label: t.header.linen },
-    { icon: '⚽', label: t.header.sports },
-    { icon: '♿', label: t.header.ndis },
-    { icon: '🏥', label: t.header.careFacilities },
-    { icon: '💼', label: t.header.hcp },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="2" width="18" height="20" rx="3"/>
+          <circle cx="12" cy="13" r="5"/>
+          <path d="M12 10a3 3 0 0 0-3 3"/>
+          <circle cx="7" cy="5" r="1" fill="currentColor"/>
+          <circle cx="10" cy="5" r="1" fill="currentColor"/>
+        </svg>
+      ),
+      label: t.header.domestic
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/>
+          <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+          <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+          <path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>
+        </svg>
+      ),
+      label: t.header.commercial
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3a2.5 2.5 0 0 0-2.5 2.5v1.25L3 11a1.5 1.5 0 0 0 .5 2.8h17a1.5 1.5 0 0 0 .5-2.8l-6.5-4.25V5.5A2.5 2.5 0 0 0 12 3z"/>
+          <path d="M12 13.8v7.2"/>
+          <path d="M8 17h8"/>
+        </svg>
+      ),
+      label: t.header.ironing
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+          <path d="m12 11 2 2 4-4"/>
+        </svg>
+      ),
+      label: t.header.dryCleaning
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 4v16"/>
+          <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
+          <path d="M2 17h20"/>
+          <path d="M6 8v9"/>
+        </svg>
+      ),
+      label: t.header.linen
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20"/>
+          <path d="M2 12h20"/>
+        </svg>
+      ),
+      label: t.header.sports
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="4" r="2"/>
+          <path d="M12 6v6l4 2"/>
+          <path d="M8 12h8"/>
+          <path d="M10 18a5 5 0 1 0 0-10"/>
+        </svg>
+      ),
+      label: t.header.ndis
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/>
+          <path d="M12 7v6M9 10h6"/>
+          <path d="M3 21h18"/>
+        </svg>
+      ),
+      label: t.header.careFacilities
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <path d="M12 11v6M9 14h6"/>
+        </svg>
+      ),
+      label: t.header.hcp
+    },
   ];
 
   const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -48,7 +132,12 @@ const BookingPage = () => {
       <div className="booking-container" style={{ paddingTop: 40 }}>
         {done ? (
           <div className="booking-card booking-success">
-            <div className="success-icon">✅</div>
+            <div className="contact-success-icon-box">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
             <h2>{t.bookingPage.successTitle}</h2>
             <p>{t.bookingPage.successDesc}</p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
