@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { submitGiftCardAPI } from '../services/api';
 
 const GiftCardPage = () => {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
   const [selectedAmt, setSelectedAmt] = useState(50);
   const [customAmt, setCustomAmt] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [form, setForm] = useState({
     recipientName: '', recipientEmail: '',
     senderName: '', senderEmail: '',
@@ -18,9 +21,21 @@ const GiftCardPage = () => {
 
   const finalAmt = customAmt ? parseInt(customAmt) : selectedAmt;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setOrdered(true);
+    setLoading(true);
+    setErrorMessage('');
+    try {
+      await submitGiftCardAPI({
+        amount: finalAmt,
+        ...form
+      });
+      setOrdered(true);
+    } catch (err) {
+      setErrorMessage(err.message || 'Đặt mua thẻ quà tặng thất bại. Vui lòng thử lại!');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -183,7 +198,13 @@ const GiftCardPage = () => {
                     {lang === 'vi' ? 'Tổng tiền:' : 'Total:'} ${finalAmt || 0}.00 AUD
                   </div>
 
-                  <button type="submit" className="btn-next" style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+                  {errorMessage && (
+                    <div style={{ color: '#dc2626', background: '#fee2e2', padding: '10px 14px', borderRadius: 8, marginBottom: 14, fontSize: 14 }}>
+                      ⚠️ {errorMessage}
+                    </div>
+                  )}
+
+                  <button type="submit" className="btn-next" disabled={loading} style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 12v10H4V12"/>
                       <path d="M2 7h20v5H2z"/>
@@ -191,7 +212,7 @@ const GiftCardPage = () => {
                       <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
                       <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
                     </svg>
-                    {t.giftCardPage.btnPurchase}
+                    {loading ? 'Đang xử lý...' : t.giftCardPage.btnPurchase}
                   </button>
                 </form>
               </div>

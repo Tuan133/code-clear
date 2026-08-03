@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { submitBookingAPI } from '../services/api';
 
 const BookingPage = () => {
   const navigate = useNavigate();
@@ -8,6 +9,8 @@ const BookingPage = () => {
   const [step, setStep] = useState(0);
   const [selected, setSelected] = useState('');
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     address: '', suburb: '', state: '', postcode: '',
@@ -115,9 +118,31 @@ const BookingPage = () => {
 
   const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const submitBooking = (e) => {
+  const submitBooking = async (e) => {
     e.preventDefault();
-    setDone(true);
+    setLoading(true);
+    setErrorMessage('');
+    try {
+      await submitBookingAPI({
+        serviceType: selected || 'Giặt Ủi Gia Đình',
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        address: form.address,
+        suburb: form.suburb,
+        state: form.state,
+        pickupDate: form.pickupDate,
+        pickupTime: form.pickupTime,
+        frequency: form.frequency,
+        notes: form.notes
+      });
+      setDone(true);
+    } catch (err) {
+      setErrorMessage(err.message || 'Gửi yêu cầu thất bại. Vui lòng thử lại!');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -312,9 +337,17 @@ const BookingPage = () => {
                   </div>
                 </div>
 
+                {errorMessage && (
+                  <div style={{ color: 'var(--color-error, #dc2626)', background: '#fee2e2', padding: '12px 16px', borderRadius: 8, marginBottom: 16, fontSize: 14 }}>
+                    ⚠️ {errorMessage}
+                  </div>
+                )}
+
                 <div className="form-actions">
-                  <button type="button" className="btn-back" onClick={() => setStep(1)}>{t.bookingPage.btnBack}</button>
-                  <button type="submit" className="btn-next">{t.bookingPage.btnSubmit}</button>
+                  <button type="button" className="btn-back" disabled={loading} onClick={() => setStep(1)}>{t.bookingPage.btnBack}</button>
+                  <button type="submit" className="btn-next" disabled={loading}>
+                    {loading ? 'Đang gửi dữ liệu...' : t.bookingPage.btnSubmit}
+                  </button>
                 </div>
               </form>
             )}

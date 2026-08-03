@@ -1,18 +1,30 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { submitContactAPI } from '../services/api';
 
 const ContactPage = () => {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
   const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage('');
+    try {
+      await submitContactAPI(form);
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMessage(err.message || 'Gửi lời nhắn thất bại. Vui lòng thử lại!');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const faqsVi = [
@@ -221,8 +233,13 @@ const ContactPage = () => {
                         style={{ minHeight: 120 }}
                       />
                     </div>
-                    <button type="submit" className="btn-next" style={{ width: '100%' }}>
-                      {t.contactPage.btnSend}
+                    {errorMessage && (
+                      <div style={{ color: '#dc2626', background: '#fee2e2', padding: '10px 14px', borderRadius: 8, marginBottom: 14, fontSize: 14 }}>
+                        ⚠️ {errorMessage}
+                      </div>
+                    )}
+                    <button type="submit" className="btn-next" disabled={loading} style={{ width: '100%' }}>
+                      {loading ? 'Đang gửi...' : t.contactPage.btnSend}
                     </button>
                   </form>
                 </>
