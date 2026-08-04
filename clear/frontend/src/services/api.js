@@ -29,8 +29,12 @@ const request = async (endpoint, method = 'GET', body = null) => {
   return data;
 };
 
-// API Services
+// API Services for Forms
 export const submitBookingAPI = (bookingData) => request('/bookings', 'POST', bookingData);
 export const submitContactAPI = (contactData) => request('/contact', 'POST', contactData);
 export const submitGiftCardAPI = (giftCardData) => request('/gift-cards', 'POST', giftCardData);
 export const subscribeNewsletterAPI = (email) => request('/newsletter', 'POST', { email });
+
+// API Services for Dynamic Data Rendering
+export const getServicesAPI = () => request('/services', 'GET');
+export const getPricingAPI = () => request('/pricing', 'GET');

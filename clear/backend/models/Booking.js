@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema({
+  orderCode: { type: String, unique: true, required: true },
   serviceType: { type: String, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },

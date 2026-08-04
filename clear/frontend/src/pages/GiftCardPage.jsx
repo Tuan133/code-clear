@@ -16,6 +16,7 @@ const GiftCardPage = () => {
     message: '', deliveryDate: '',
   });
   const [ordered, setOrdered] = useState(false);
+  const [cardCode, setCardCode] = useState('');
 
   const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -26,10 +27,13 @@ const GiftCardPage = () => {
     setLoading(true);
     setErrorMessage('');
     try {
-      await submitGiftCardAPI({
+      const res = await submitGiftCardAPI({
         amount: finalAmt,
         ...form
       });
+      if (res && res.code) {
+        setCardCode(res.code);
+      }
       setOrdered(true);
     } catch (err) {
       setErrorMessage(err.message || 'Đặt mua thẻ quà tặng thất bại. Vui lòng thử lại!');
@@ -63,6 +67,12 @@ const GiftCardPage = () => {
               <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: 12 }}>
                 {t.giftCardPage.orderedTitle}
               </h2>
+              {cardCode && (
+                <div style={{ background: 'var(--light-blue)', padding: '14px 20px', borderRadius: 10, margin: '16px auto', maxWidth: 360, fontSize: 16, fontWeight: 700, color: 'var(--primary)' }}>
+                  {lang === 'vi' ? 'Mã thẻ quà tặng của bạn:' : 'Your Gift Card Code:'} <br />
+                  <span style={{ color: 'var(--cyan)', fontSize: 22, letterSpacing: '1px', display: 'inline-block', marginTop: 4 }}>{cardCode}</span>
+                </div>
+              )}
               <p style={{ color: 'var(--text-gray)', lineHeight: 1.7, marginBottom: 28 }}>
                 {t.giftCardPage.orderedDesc} (Email: <strong>{form.recipientEmail}</strong>)
               </p>

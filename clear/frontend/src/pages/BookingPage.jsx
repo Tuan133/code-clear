@@ -11,6 +11,7 @@ const BookingPage = () => {
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [orderCode, setOrderCode] = useState('');
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     address: '', suburb: '', state: '', postcode: '',
@@ -98,7 +99,7 @@ const BookingPage = () => {
     {
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/>
+          <path d="M19 21V5a2 2 0 0 1-2-2H7a2 2 0 0 1-2 2v16"/>
           <path d="M12 7v6M9 10h6"/>
           <path d="M3 21h18"/>
         </svg>
@@ -123,7 +124,7 @@ const BookingPage = () => {
     setLoading(true);
     setErrorMessage('');
     try {
-      await submitBookingAPI({
+      const res = await submitBookingAPI({
         serviceType: selected || 'Giặt Ủi Gia Đình',
         firstName: form.firstName,
         lastName: form.lastName,
@@ -137,6 +138,9 @@ const BookingPage = () => {
         frequency: form.frequency,
         notes: form.notes
       });
+      if (res && res.orderCode) {
+        setOrderCode(res.orderCode);
+      }
       setDone(true);
     } catch (err) {
       setErrorMessage(err.message || 'Gửi yêu cầu thất bại. Vui lòng thử lại!');
@@ -164,6 +168,11 @@ const BookingPage = () => {
               </svg>
             </div>
             <h2>{t.bookingPage.successTitle}</h2>
+            {orderCode && (
+              <div style={{ background: 'var(--light-blue)', padding: '12px 20px', borderRadius: 10, margin: '16px auto', maxWidth: 400, fontSize: 16, fontWeight: 700, color: 'var(--primary)' }}>
+                Mã đơn hàng của bạn: <span style={{ color: 'var(--cyan)', fontSize: 18, letterSpacing: '1px' }}>{orderCode}</span>
+              </div>
+            )}
             <p>{t.bookingPage.successDesc}</p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={() => { setDone(false); setStep(0); setSelected(''); }}>

@@ -1,8 +1,8 @@
 # DANH SÁCH CÁC VIỆC CẦN LÀM Ở PHẦN BACKEND (TLaundry)
 
 ## 1. Cơ sở dữ liệu & Cấu trúc Mô hình Dữ liệu (Database & Data Modeling)
-- [ ] Lựa chọn & Kết nối CSDL: Tích hợp MongoDB (dùng mongoose) hoặc PostgreSQL/MySQL (dùng Prisma hoặc TypeORM).
-- [ ] Định nghĩa Schemas / Data Models:
+- [x] Lựa chọn & Kết nối CSDL: Tích hợp MongoDB (dùng mongoose) hoặc PostgreSQL/MySQL (dùng Prisma hoặc TypeORM).
+- [x] Định nghĩa Schemas / Data Models:
   - User: Lưu thông tin khách hàng, nhân viên, quản trị viên (Admin).
   - Booking / Order: Mã đơn, khách hàng, các dịch vụ đã chọn, địa chỉ lấy/giao hàng, ngày giờ hẹn, ghi chú, trạng thái đơn (PENDING, CONFIRMED, PICKED_UP, WASHING, DELIVERING, COMPLETED, CANCELLED).
   - Contact: Họ tên, email, sđt, tiêu đề, nội dung liên hệ.
@@ -10,11 +10,11 @@
   - Service & Pricing: Lưu danh mục dịch vụ và bảng giá động trên DB.
 
 ## 2. Kết nối API với Frontend (RESTful APIs Integration)
-- [ ] API Đặt dịch vụ (POST /api/bookings): Tiếp nhận dữ liệu từ BookingPage.jsx, validate thông tin, lưu đơn vào CSDL và trả về mã đơn hàng.
-- [ ] API Gửi liên hệ (POST /api/contact): Nhận dữ liệu từ form ContactPage.jsx, lưu vào CSDL.
-- [ ] API Đặt thẻ quà tặng (POST /api/gift-cards): Tiếp nhận thông tin mua thẻ từ GiftCardPage.jsx, sinh mã code ngẫu nhiên (ví dụ: TL-889922).
-- [ ] API Đăng ký nhận tin (POST /api/newsletter): Lưu email từ Footer để gửi khuyến mãi.
-- [ ] API Lấy bảng giá & dịch vụ (GET /api/services, GET /api/pricing): Trả về dữ liệu dịch vụ để Frontend render động.
+- [x] API Đặt dịch vụ (POST /api/bookings): Tiếp nhận dữ liệu từ BookingPage.jsx, validate thông tin, lưu đơn vào CSDL và trả về mã đơn hàng.
+- [x] API Gửi liên hệ (POST /api/contact): Nhận dữ liệu từ form ContactPage.jsx, lưu vào CSDL.
+- [x] API Đặt thẻ quà tặng (POST /api/gift-cards): Tiếp nhận thông tin mua thẻ từ GiftCardPage.jsx, sinh mã code ngẫu nhiên (ví dụ: TL-889922).
+- [x] API Đăng ký nhận tin (POST /api/newsletter): Lưu email từ Footer để gửi khuyến mãi.
+- [x] API Lấy bảng giá & dịch vụ (GET /api/services, GET /api/pricing): Trả về dữ liệu dịch vụ để Frontend render động.
 
 ## 3. Xác thực & Phân quyền (Authentication & Authorization)
 - [ ] Hệ thống Đăng ký / Đăng nhập:

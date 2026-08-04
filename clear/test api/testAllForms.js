@@ -1,11 +1,17 @@
 import dotenv from 'dotenv';
-import connectDB from './config/db.js';
-import Booking from './models/Booking.js';
-import Contact from './models/Contact.js';
-import GiftCard from './models/GiftCard.js';
-import Newsletter from './models/Newsletter.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, '../backend/.env') });
+
+import connectDB from '../backend/config/db.js';
+import Booking from '../backend/models/Booking.js';
+import Contact from '../backend/models/Contact.js';
+import GiftCard from '../backend/models/GiftCard.js';
+import Newsletter from '../backend/models/Newsletter.js';
 
 const testForms = async () => {
   try {
