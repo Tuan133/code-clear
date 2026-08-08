@@ -14,13 +14,14 @@ const bookingSchema = new mongoose.Schema({
   pickupTime: { type: String, default: 'Morning (8am-12pm)' },
   frequency: { type: String, default: 'one-off' },
   notes: { type: String },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null }, // null nếu guest
   status: {
     type: String,
     enum: ['PENDING', 'CONFIRMED', 'PICKED_UP', 'WASHING', 'DELIVERING', 'COMPLETED', 'CANCELLED'],
     default: 'PENDING'
   },
-  createdAt: { type: Date, default: Date.now }
-});
+}, { timestamps: true });
+
 
 const Booking = mongoose.model('Booking', bookingSchema);
 

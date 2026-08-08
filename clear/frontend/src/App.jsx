@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
+import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PrivateRoute from './components/PrivateRoute';
 import HomePage from './pages/HomePage';
 import BookingPage from './pages/BookingPage';
 import ServicesPage from './pages/ServicesPage';
 import PricingPage from './pages/PricingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-
 import GiftCardPage from './pages/GiftCardPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import OrderHistoryPage from './pages/OrderHistoryPage';
+import AdminPage from './pages/AdminPage';
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -162,6 +168,25 @@ function AppLayout() {
         <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/gift-card" element={<GiftCardPage />} />
+
+        {/* ── Auth Routes ── */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        {/* ── Protected: Customer only ── */}
+        <Route path="/my-orders" element={
+          <PrivateRoute roles={['CUSTOMER', 'ADMIN', 'STAFF']}>
+            <OrderHistoryPage />
+          </PrivateRoute>
+        } />
+
+        {/* ── Protected: Admin & Staff Portal ── */}
+        <Route path="/admin" element={
+          <PrivateRoute roles={['ADMIN', 'STAFF']}>
+            <AdminPage />
+          </PrivateRoute>
+        } />
+
         <Route path="/privacy" element={
           <main style={{ padding: '80px 24px', maxWidth: 800, margin: '0 auto', minHeight: '60vh' }}>
             <h1 style={{ color: 'var(--primary)', fontSize: '2rem', marginBottom: 20 }}>Chính Sách Bảo Mật</h1>
@@ -219,14 +244,17 @@ function AppLayout() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <BrowserRouter>
-        <AppLayout />
-      </BrowserRouter>
-    </LanguageProvider>
+    <AuthProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+          <AppLayout />
+        </BrowserRouter>
+      </LanguageProvider>
+    </AuthProvider>
   );
 }
 
 export default App;
+
 
 

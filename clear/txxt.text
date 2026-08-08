@@ -17,20 +17,20 @@
 - [x] API Lấy bảng giá & dịch vụ (GET /api/services, GET /api/pricing): Trả về dữ liệu dịch vụ để Frontend render động.
 
 ## 3. Xác thực & Phân quyền (Authentication & Authorization)
-- [ ] Hệ thống Đăng ký / Đăng nhập:
+- [x] Hệ thống Đăng ký / Đăng nhập:
   - Đăng ký / Đăng nhập khách hàng & Admin (mã hóa mật khẩu bằng bcryptjs).
   - Cấp phát & kiểm tra JWT (JSON Web Token) / Refresh Token.
-- [ ] Phân quyền (RBAC - Role Based Access Control):
+- [x] Phân quyền (RBAC - Role Based Access Control):
   - Khách hàng: Xem lịch sử đơn hàng cá nhân, theo dõi trạng thái đơn giặt của mình.
   - Admin / Staff: Truy cập được toàn bộ các API quản trị hệ thống.
 
 ## 4. Trang Quản trị Admin (Admin Portal APIs)
-- [ ] API Quản lý Đơn hàng:
+- [x] API Quản lý Đơn hàng:
   - Lấy danh sách đơn giặt (có phân trang, lọc theo ngày, theo trạng thái).
   - Cập nhật trạng thái đơn giặt (Chuyển trạng thái: Đã lấy đồ -> Đang giặt -> Đang giao -> Hoàn thành).
-- [ ] API Dashboard & Thống kê:
+- [x] API Dashboard & Thống kê:
   - Thống kê tổng số đơn hàng trong ngày/tháng, tổng doanh thu, số lượng thẻ quà tặng đã bán.
-- [ ] API Quản lý Khách hàng & Phản hồi:
+- [x] API Quản lý Khách hàng & Phản hồi:
   - Xem danh sách lời nhắn liên hệ, cập nhật đánh dấu đã xử lý.
 
 ## 5. Dịch vụ Thông báo & Email (Notification & Email Service)

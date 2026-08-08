@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
+
 
 const PhoneIcon = () => (
   <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -28,8 +30,10 @@ const GlobeIcon = () => (
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { lang, toggleLanguage, t } = useLanguage();
+  const { user, isAuthenticated, isAdminOrStaff, logout } = useAuth();
 
   const aboutLinks = [
     { label: t.header.aboutJims, href: '/about' },
@@ -85,6 +89,61 @@ const Header = () => {
               <GlobeIcon />
               <span className="lang-text">{lang === 'vi' ? '🇻🇳 VN' : '🇬🇧 EN'}</span>
             </button>
+
+            {isAuthenticated ? (
+              <div style={{ position: 'relative' }}>
+                <button
+                  className="user-menu-trigger"
+                  onClick={() => setUserMenuOpen(v => !v)}
+                  aria-label="Menu tài khoản"
+                >
+                  <div className="user-avatar-mini">
+                    {user?.name?.charAt(0)?.toUpperCase() || 'U'}
+                  </div>
+                  <span className="user-name-mini">{user?.name?.split(' ').pop()}</span>
+                  <ChevronDown />
+                </button>
+                {userMenuOpen && (
+                  <>
+                    <div style={{ position: 'fixed', inset: 0, zIndex: 49 }} onClick={() => setUserMenuOpen(false)} />
+                    <div className="user-dropdown">
+                      <div className="user-dropdown-header">
+                        <p className="user-dropdown-name">{user?.name}</p>
+                        <p className="user-dropdown-email">{user?.email}</p>
+                        <span className={`auth-role-badge auth-role-badge--${user?.role?.toLowerCase()}`}>{user?.role}</span>
+                      </div>
+                      <div className="user-dropdown-body">
+                        {!isAdminOrStaff && (
+                          <Link to="/my-orders" className="user-dropdown-item" onClick={() => setUserMenuOpen(false)}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                            Lịch sử đơn hàng
+                          </Link>
+                        )}
+                        {isAdminOrStaff && (
+                          <Link to="/admin" className="user-dropdown-item" onClick={() => setUserMenuOpen(false)}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                            Quản trị Admin
+                          </Link>
+                        )}
+                        <button
+                          className="user-dropdown-item user-dropdown-item--danger"
+                          onClick={() => { setUserMenuOpen(false); logout(); navigate('/'); }}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                          Đăng xuất
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <button className="btn-login" onClick={() => navigate('/login')}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                Đăng nhập
+              </button>
+            )}
+
             <button className="btn-quote" onClick={() => navigate('/booking')}>
               <CalendarIcon /> {t.header.requestQuote}
             </button>
@@ -92,6 +151,7 @@ const Header = () => {
               <PhoneIcon /> {t.header.phone}
             </a>
           </div>
+
 
           {/* Hamburger */}
           <button className="hamburger" onClick={() => setMobileOpen(true)} aria-label="Open menu">

@@ -6,8 +6,43 @@ import GiftCard from './models/GiftCard.js';
 import Newsletter from './models/Newsletter.js';
 import Service from './models/Service.js';
 import Pricing from './models/Pricing.js';
+import User from './models/User.js';
 
 dotenv.config();
+
+/**
+ * Seed tài khoản demo: Admin + Customer (chỉ chạy nếu chưa có)
+ */
+export const seedDemoUsers = async () => {
+  const adminEmail = 'admin@tlaundry.com';
+  const customerEmail = 'customer@tlaundry.com';
+
+  const existingAdmin = await User.findOne({ email: adminEmail });
+  if (!existingAdmin) {
+    await User.create({
+      name: 'Admin TLaundry',
+      email: adminEmail,
+      password: 'admin123456',
+      phone: '0901111111',
+      role: 'ADMIN'
+    });
+    console.log('🌱 Seeded demo ADMIN account: admin@tlaundry.com / admin123456');
+  }
+
+  const existingCustomer = await User.findOne({ email: customerEmail });
+  if (!existingCustomer) {
+    await User.create({
+      name: 'Nguyễn Văn Demo',
+      email: customerEmail,
+      password: 'customer123',
+      phone: '0909999999',
+      role: 'CUSTOMER'
+    });
+    console.log('🌱 Seeded demo CUSTOMER account: customer@tlaundry.com / customer123');
+  }
+};
+
+
 
 export const seedServicesAndPricing = async () => {
   const serviceCount = await Service.countDocuments();

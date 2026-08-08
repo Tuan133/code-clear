@@ -2,12 +2,15 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: true, trim: true },
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
+  phone: { type: String, trim: true, default: '' },
   password: { type: String, required: true },
   role: { type: String, enum: ['CUSTOMER', 'STAFF', 'ADMIN'], default: 'CUSTOMER' },
+  isActive: { type: Boolean, default: true },
+  refreshToken: { type: String, default: null },
   createdAt: { type: Date, default: Date.now }
-});
+}, { timestamps: true });
 
 // Pre-save hook: Hash password before saving to MongoDB
 userSchema.pre('save', async function () {
